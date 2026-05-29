@@ -1,0 +1,223 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/globals.css';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import { site } from '../lib/site';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  // optional per-page schemas — base layout always emits Organization + WebSite
+  extraSchema?: Array<{ schema: 'localBusiness' | 'servicesCatalog' | 'servicePage' | 'faq' | 'breadcrumb'; [key: string]: any }>;
+}
+
+const {
+  title = `${site.brandName} | Custom Cabinets & Kitchen Remodeling`,
+  description = 'Tampa kitchen cabinets done right: kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling. Free estimates from a trusted local team.',
+  canonical,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  noindex = false,
+  extraSchema = [],
+} = Astro.props as Props;
+
+const siteUrl = site.url;
+const fullTitle = title.includes(site.brandName) ? title : `${title} | ${site.brandName}`;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#1a2b4a" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="tampa kitchen cabinets, kitchen cabinet painting tampa, cabinet refacing tampa, custom kitchen cabinets tampa, cabinet installation tampa, kitchen remodeling tampa, kitchen renovation tampa, cabinet painters tampa, kitchen cabinets tampa" />
+    <meta name="author" content={site.legalEntity} />
+    <meta name="publisher" content={site.legalEntity} />
+    <meta name="format-detection" content="telephone=yes, email=yes, address=yes" />
+    <meta name="geo.region" content="US-FL" />
+    <meta name="geo.placename" content="Tampa" />
+    <meta name="geo.position" content={`${site.geo.lat};${site.geo.lng}`} />
+    <meta name="ICBM" content={`${site.geo.lat}, ${site.geo.lng}`} />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    {/* Open Graph */}
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.brandName} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.brandName} - Custom Cabinets, Refacing & Kitchen Remodeling in Tampa, FL`} />
+    <meta property="business:contact_data:phone_number" content={site.phoneE164} />
+    <meta property="business:contact_data:email" content={site.email} />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {/* Icons */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {/* Sitemap discovery */}
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    {/* Preload LCP hero (homepage). Low-cost hint elsewhere. */}
+    <link rel="preload" as="image" href="/optimized/hero.webp" fetchpriority="high" />
+
+    {/* Analytics — emitted only once real container IDs are set in src/data/site.json */}
+    {site.ga4Id && (
+      <Fragment>
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script is:inline define:vars={{ ga4Id: site.ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', ga4Id, { transport_type: 'beacon' });
+        </script>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}`}></script>
+      </Fragment>
+    )}
+    {site.gtmId && (
+      <script async src={`https://www.googletagmanager.com/gtm.js?id=${site.gtmId}`}></script>
+    )}
+
+    <SchemaMarkup schema="organization" />
+    <SchemaMarkup schema="website" />
+    {extraSchema.map((s) => <SchemaMarkup {...(s as any)} />)}
+
+    <style is:inline>
+      [data-hydration-error] { display: none !important; }
+      /* Failsafe: never leave fade-in-on-scroll content invisible if JS doesn't run. */
+      .no-js .opacity-0.translate-y-8,
+      .no-js .opacity-0.translate-y-4 { opacity: 1 !important; transform: none !important; }
+    </style>
+  </head>
+  <body class="no-js">
+    {site.gtmId && (
+      <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${site.gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
+    )}
+    <slot />
+
+    {/* Gallery lightbox (idempotent — no-ops if #gallery is absent). */}
+    <div id="lightbox-root" class="hidden fixed inset-0 z-[100] bg-black/90 items-center justify-center p-4" role="dialog" aria-modal="true">
+      <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl font-bold w-12 h-12 flex items-center justify-center hover:bg-white/10 rounded-full" aria-label="Close">×</button>
+      <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl w-12 h-12 flex items-center justify-center hover:bg-white/10 rounded-full" aria-label="Previous">‹</button>
+      <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl w-12 h-12 flex items-center justify-center hover:bg-white/10 rounded-full" aria-label="Next">›</button>
+      <img id="lightbox-img" src="" alt="" class="max-w-[92vw] max-h-[88vh] object-contain rounded-lg" />
+    </div>
+    <script is:inline>
+      (function () {
+        var root = document.getElementById('lightbox-root');
+        var img = document.getElementById('lightbox-img');
+        var btnClose = document.getElementById('lightbox-close');
+        var btnPrev = document.getElementById('lightbox-prev');
+        var btnNext = document.getElementById('lightbox-next');
+        if (!root || !img) return;
+        var gallery = document.getElementById('gallery');
+        if (!gallery) return;
+        var tiles = Array.prototype.slice.call(gallery.querySelectorAll('.cursor-pointer'));
+        var imgs = tiles.map(function (t) { return t.querySelector('img'); }).filter(Boolean);
+        var current = 0;
+        function open(i) {
+          current = i;
+          img.src = imgs[i].currentSrc || imgs[i].src;
+          img.alt = imgs[i].alt || '';
+          root.classList.remove('hidden');
+          root.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+        function close() {
+          root.classList.add('hidden');
+          root.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+        function step(d) {
+          var visibleIdx = [];
+          tiles.forEach(function (t, i) { if (!t.classList.contains('hidden')) visibleIdx.push(i); });
+          if (visibleIdx.length === 0) return;
+          var pos = visibleIdx.indexOf(current);
+          if (pos === -1) pos = 0;
+          var next = visibleIdx[(pos + d + visibleIdx.length) % visibleIdx.length];
+          open(next);
+        }
+        tiles.forEach(function (tile, i) { tile.addEventListener('click', function () { open(i); }); });
+
+        var filterButtons = Array.prototype.slice.call(gallery.querySelectorAll('button'))
+          .filter(function (b) { return !b.closest('.cursor-pointer'); });
+        if (filterButtons.length > 0) {
+          function decodeEntities(s) { var d = document.createElement('div'); d.innerHTML = s; return d.textContent || ''; }
+          var tileCategories = tiles.map(function (t) {
+            var caption = t.querySelector('.gallery-cat');
+            return caption ? decodeEntities(caption.textContent.trim()) : '';
+          });
+          function setActive(btn) {
+            filterButtons.forEach(function (b) {
+              b.classList.remove('bg-[#1a2b4a]', 'text-white', 'shadow-lg');
+              b.classList.add('bg-white', 'text-[#1a2b4a]', 'border', 'border-gray-200');
+            });
+            btn.classList.add('bg-[#1a2b4a]', 'text-white', 'shadow-lg');
+            btn.classList.remove('bg-white', 'text-[#1a2b4a]', 'border', 'border-gray-200');
+          }
+          function filterTo(category) {
+            tiles.forEach(function (t, i) {
+              var show = category === 'All' || tileCategories[i] === category;
+              t.classList.toggle('hidden', !show);
+            });
+          }
+          filterButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () { setActive(btn); filterTo(decodeEntities(btn.textContent.trim())); });
+          });
+        }
+        btnClose && btnClose.addEventListener('click', close);
+        btnPrev && btnPrev.addEventListener('click', function () { step(-1); });
+        btnNext && btnNext.addEventListener('click', function () { step(1); });
+        root.addEventListener('click', function (e) { if (e.target === root) close(); });
+        document.addEventListener('keydown', function (e) {
+          if (root.classList.contains('hidden')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') step(-1);
+          if (e.key === 'ArrowRight') step(1);
+        });
+      })();
+    </script>
+
+    {/* Scroll-fade observer */}
+    <script is:inline>
+      (function () {
+        document.body.classList.remove('no-js');
+        var els = document.querySelectorAll('.opacity-0.translate-y-8, .opacity-0.translate-y-4');
+        function reveal(el) {
+          el.classList.remove('opacity-0', 'translate-y-8', 'translate-y-4');
+          el.classList.add('opacity-100', 'translate-y-0');
+        }
+        if (!('IntersectionObserver' in window)) { els.forEach(reveal); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { reveal(entry.target); io.unobserve(entry.target); }
+          });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+        els.forEach(function (el) { io.observe(el); });
+        setTimeout(function () {
+          document.querySelectorAll('.opacity-0.translate-y-8, .opacity-0.translate-y-4').forEach(reveal);
+        }, 2500);
+      })();
+    </script>
+  </body>
+</html>

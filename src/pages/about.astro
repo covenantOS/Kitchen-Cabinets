@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CTASection from '../components/CTASection.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+const team = [
+  { name: 'Will Hamilton', role: 'Owner & Founder', initials: 'WH', bio: 'Will founded the company on a simple standard: a contractor should answer the phone, show up when promised, and stand behind the work with a real written warranty. He runs the business on systems, not excuses.' },
+  { name: 'Leandro de Souza', role: 'Operations Manager', initials: 'LS', bio: 'Leandro walks most of our free in-home estimates, designs the scope, and coordinates the crew. He is fluent in English, Spanish, and Portuguese, so nothing gets lost in translation on your project.' },
+  { name: 'John Tortorich', role: 'Director of Field Operations', initials: 'JT', bio: 'A U.S. military veteran, John brings a precision-first mindset to quality control. When he signs off on a kitchen, every door, drawer, and edge has been verified, not assumed.' },
+  { name: 'Reginaldo Silva', role: 'Master Finisher & Team Lead', initials: 'RS', bio: 'With 25+ years behind a brush and spray gun, Reginaldo sets the technical bar. He teaches the crew how to prep and finish cabinetry so a factory-grade result actually lasts.' },
+];
+const stats = [
+  { value: '5.0 / 5', label: 'Google rating (Westchase Painting)' },
+  { value: '25+', label: 'Years of finish craftsmanship' },
+  { value: '24/7', label: 'Real people on the phone' },
+  { value: '3', label: 'Languages (EN / ES / PT)' },
+];
+const standard = [
+  { title: 'Premium materials only', body: 'Cabinet-grade primers and enamels built to take daily kitchen use. No bargain coatings, no bait-and-switch on materials.' },
+  { title: 'Thorough preparation', body: 'Prep is where most cabinet jobs fail. We clean, degrease, sand, and prime properly so the finish bonds and lasts for years.' },
+  { title: 'Clear communication', body: 'You know what is happening on your kitchen at every step. Leandro and John keep you updated from estimate to final walk-through.' },
+  { title: 'Transparent pricing', body: 'Your quote is your quote. We do not lowball to win the job and then surprise you with add-ons.' },
+];
+const extraSchema = [{ schema: 'localBusiness' }];
+---
+<BaseLayout title="About Tampa Kitchen Cabinets" description="Tampa Kitchen Cabinets is a division of Westchase Painting Company, the same trusted local team focused on kitchen cabinets and remodeling. Meet the people behind your project." extraSchema={extraSchema as any}>
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">{site.attribution}</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">About {site.brandName}</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">A team Tampa Bay already trusts, focused entirely on cabinets and kitchens.</p>
+      </div>
+    </section>
+
+    <section class="bg-[#1a2b4a] border-y-4 border-[#c9a227]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {stats.map((s) => (<div><p class="text-3xl font-extrabold text-[#c9a227]">{s.value}</p><p class="text-gray-300 text-sm mt-1">{s.label}</p></div>))}
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 article-content">
+        <p class="text-xl">{site.brandName} is the kitchen and cabinet division of {site.legalEntity}, a locally owned home-services company serving Westchase, Carrollwood, South Tampa, New Tampa, Citrus Park, Brandon, Riverview, and the greater Tampa Bay area.</p>
+        <p>We started this brand because cabinets and kitchens deserve a true specialist. The same owners and crews behind <a href={site.sisterUrl} target="_blank" rel="noopener">{site.sisterName}</a> have spent years finishing cabinetry across Tampa Bay, and homeowners kept asking for more: refacing, custom cabinets, full kitchen remodels. So we built a brand around it.</p>
+        <p>Every project is backed by our written workmanship warranty, full insurance coverage, and a team that treats your home like it belongs to a neighbor. Because it does. You are our neighbor.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-[#1a2b4a]">Meet the team</h2><p class="text-gray-600 mt-2">The same people who run Westchase Painting Company.</p></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {team.map((m) => (
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+              <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-[#1a2b4a] text-[#c9a227] flex items-center justify-center text-2xl font-extrabold">{m.initials}</div>
+              <h3 class="font-bold text-[#1a2b4a]">{m.name}</h3>
+              <p class="text-[#c9a227] text-sm font-semibold mb-3">{m.role}</p>
+              <p class="text-gray-600 text-sm leading-relaxed">{m.bio}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-6">Team photography coming soon.</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-[#1a2b4a]">The {site.brandName} standard</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {standard.map((s) => (
+            <div class="flex gap-4">
+              <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#c9a227]/15 text-[#c9a227] flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
+              <div><h3 class="font-bold text-[#1a2b4a] mb-1">{s.title}</h3><p class="text-gray-600">{s.body}</p></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#f7f4ed]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-[#1a2b4a] mb-3">Real humans. Real availability.</h2>
+        <p class="text-gray-700 text-lg">When you reach out, a real person answers, in English, Spanish, or Portuguese. We walk your estimate ourselves, we keep you updated through the project, and we are not finished until you are happy with your kitchen.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get a Free Estimate</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#1a2b4a] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#1a2b4a] hover:text-white transition-all">Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </section>
+
+    <ContactForm formLocation="about" />
+    <Footer />
+  </main>
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

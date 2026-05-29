@@ -1,0 +1,30 @@
+---
+// Tampa Kitchen Cabinets typographic lockup.
+// Uses the brand font (Inter) + navy/gold tokens, matching the sister brand's
+// type-led treatment with a bold wordmark over a lighter, letter-spaced eyebrow.
+// Color of the wordmark follows `currentColor` so it adapts to dark (hero/footer)
+// and light (scrolled header) backgrounds; the gold accents stay constant since
+// gold reads on both navy and white.
+interface Props {
+  class?: string;
+  /** tailwind size scale for the wordmark, e.g. 'text-xl sm:text-2xl' */
+  size?: string;
+}
+const { class: className = '', size = 'text-lg sm:text-xl lg:text-2xl' } = Astro.props as Props;
+---
+<span class={`brand-logo inline-flex items-center gap-2.5 select-none ${className}`} aria-label="Tampa Kitchen Cabinets">
+  <!-- Cabinet mark (gold, constant) -->
+  <svg class="h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 text-[#c9a227]" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+    <rect x="3" y="3" width="34" height="34" rx="4" stroke="currentColor" stroke-width="2.5"/>
+    <line x1="20" y1="4" x2="20" y2="36" stroke="currentColor" stroke-width="2.5"/>
+    <line x1="4" y1="20" x2="36" y2="20" stroke="currentColor" stroke-width="2.5"/>
+    <circle cx="16.5" cy="16.5" r="1.7" fill="currentColor"/>
+    <circle cx="23.5" cy="16.5" r="1.7" fill="currentColor"/>
+    <circle cx="16.5" cy="23.5" r="1.7" fill="currentColor"/>
+    <circle cx="23.5" cy="23.5" r="1.7" fill="currentColor"/>
+  </svg>
+  <span class="flex flex-col leading-none">
+    <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.22em] text-[#c9a227]">Tampa</span>
+    <span class={`font-extrabold tracking-tight leading-none ${size}`}>Kitchen Cabinets</span>
+  </span>
+</span>

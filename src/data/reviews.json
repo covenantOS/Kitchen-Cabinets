@@ -1,0 +1,12 @@
+{
+  "note": "PLACEHOLDER SOURCE: These are real 5-star reviews for the shared team operating under the parent brand, Westchase Painting Company. They are shown as honest sister-brand social proof until the new Tampa Kitchen Cabinets Google Business Profile has its own reviews. Replace/supplement via Sveltia CMS once GBP reviews exist.",
+  "aggregateLabel": "Reviews for our team via Westchase Painting Company",
+  "items": [
+    { "name": "Sarah J.", "location": "Citrus Park", "rating": 5, "via": "Westchase Painting Company", "text": "They transformed our dated kitchen cabinets into a stunning modern look. Saved us thousands compared to replacing them. Cannot recommend them enough!" },
+    { "name": "Michelle T.", "location": "South Tampa", "rating": 5, "via": "Westchase Painting Company", "text": "From the estimate to the final walkthrough, everything was smooth. The price was competitive and the quality was premium. Highly recommend!" },
+    { "name": "Robert W.", "location": "Odessa", "rating": 5, "via": "Westchase Painting Company", "text": "Professional from start to finish. They helped us pick the perfect colors and the prep work was meticulous. Our kitchen looks brand new." },
+    { "name": "Amanda D.", "location": "Lutz", "rating": 5, "via": "Westchase Painting Company", "text": "Third time using this team and they never disappoint. Consistent quality and always on time. They are our go-to now." },
+    { "name": "Lisa A.", "location": "Wesley Chapel", "rating": 5, "via": "Westchase Painting Company", "text": "The crew was respectful, clean, and did amazing work. They even fixed some issues we did not know we had. Above and beyond service!" },
+    { "name": "Jennifer M.", "location": "Westchase", "rating": 5, "via": "Westchase Painting Company", "text": "Absolutely phenomenal work. The attention to detail was incredible. Clean, professional, and finished ahead of schedule." }
+  ]
+}

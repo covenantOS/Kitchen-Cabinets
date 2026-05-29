@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+const steps = [
+  { n: '1', title: 'Check your rate', body: 'Fill out a short form. It takes about 60 seconds and will not affect your credit score.' },
+  { n: '2', title: 'Compare offers', body: 'See personalized payment options from multiple lenders. Choose the rate and term that works best for you.' },
+  { n: '3', title: 'Build your kitchen', body: 'Once approved, we get started. You make simple monthly payments on a schedule that fits your budget.' },
+];
+const benefits = [
+  { title: 'Multiple lenders, one form', body: 'Acorn Finance matches you with competitive offers from several lenders at once.' },
+  { title: 'No impact to credit to check', body: 'Pre-qualifying to see your rate is a soft pull and will not affect your credit score.' },
+  { title: 'Loans for projects big and small', body: 'Finance anything from a cabinet refresh to a full custom kitchen remodel.' },
+  { title: 'Fast decisions', body: 'Most applicants see personalized offers within minutes.' },
+  { title: 'Flexible terms', body: 'Choose a monthly payment and term that keep your kitchen project comfortable.' },
+  { title: 'No prepayment penalties', body: 'Many lenders let you pay off your loan early with no extra fees.' },
+];
+---
+<BaseLayout title="Kitchen Financing in Tampa | Tampa Kitchen Cabinets" description="Flexible kitchen and cabinet financing in Tampa through Acorn Finance. Check your rate in 60 seconds with no impact to your credit score.">
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Financing</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Easy payment options for your kitchen</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Big projects deserve flexible financing. Check rates from multiple lenders with no impact to your credit score.</p>
+        <div class="mt-8">
+          <a href={site.acornFinanceUrl} target="_blank" rel="noopener" data-cta="financing_hero_acorn" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all">Check Your Rate Now</a>
+          <p class="text-gray-400 text-sm mt-3">Powered by Acorn Finance. Checking your rate will not affect your credit score.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12"><h2 class="text-3xl font-bold text-[#1a2b4a]">How financing works</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((s) => (
+            <div class="text-center">
+              <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#1a2b4a] text-[#c9a227] flex items-center justify-center text-xl font-extrabold">{s.n}</div>
+              <h3 class="font-bold text-[#1a2b4a] mb-2">{s.title}</h3>
+              <p class="text-gray-600">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b) => (
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 class="font-bold text-[#1a2b4a] mb-2">{b.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{b.body}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href={site.acornFinanceUrl} target="_blank" rel="noopener" data-cta="financing_acorn" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all">Check Your Rate Now</a>
+          <p class="text-gray-500 text-sm mt-3">Or call {site.phoneDisplay} to talk through your project first.</p>
+        </div>
+      </div>
+    </section>
+
+    <ContactForm formLocation="financing" />
+    <Footer />
+  </main>
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

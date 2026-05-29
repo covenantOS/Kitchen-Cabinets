@@ -1,0 +1,38 @@
+---
+import { site, telHref } from '../lib/site';
+---
+{/* Mobile: sticky bottom call bar. Desktop: dismissible pill bottom-left after scroll. */}
+<a href={telHref} data-cta="floating_call_mobile" class="lg:hidden fixed bottom-0 inset-x-0 z-40 flex items-center justify-center gap-2 bg-[#c9a227] text-[#1a2b4a] font-bold py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.15)]">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+  Call Now: {site.phoneDisplay}
+</a>
+
+<div id="float-call" class="hidden lg:flex fixed bottom-6 left-6 z-40 items-center gap-3 bg-white rounded-full shadow-2xl border border-gray-100 pl-4 pr-2 py-2 opacity-0 translate-y-2 transition-all duration-300">
+  <div class="flex items-center gap-3">
+    <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span></span>
+    <div class="leading-tight">
+      <p class="text-xs text-gray-500">Talk to a real person</p>
+      <a href={telHref} data-cta="floating_call_desktop" class="text-[#1a2b4a] font-bold hover:text-[#c9a227] transition-colors">{site.phoneDisplay}</a>
+    </div>
+  </div>
+  <a href={telHref} class="w-10 h-10 rounded-full bg-[#c9a227] flex items-center justify-center hover:bg-[#d4b84a] transition-colors" aria-label="Call now">
+    <svg class="w-5 h-5 text-[#1a2b4a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+  </a>
+  <button id="float-call-close" class="w-7 h-7 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400" aria-label="Dismiss">×</button>
+</div>
+
+<script is:inline>
+  (function () {
+    var el = document.getElementById('float-call');
+    if (!el) return;
+    if (sessionStorage.getItem('floatCallDismissed') === '1') { el.remove(); return; }
+    function onScroll() {
+      if (window.scrollY > 600) { el.classList.remove('opacity-0', 'translate-y-2'); }
+      else { el.classList.add('opacity-0', 'translate-y-2'); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    var close = document.getElementById('float-call-close');
+    if (close) close.addEventListener('click', function () { sessionStorage.setItem('floatCallDismissed', '1'); el.remove(); });
+  })();
+</script>

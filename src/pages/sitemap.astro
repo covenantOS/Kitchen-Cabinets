@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+
+const groups = [
+  { heading: 'Main', links: [
+    { name: 'Home', href: '/' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Financing', href: '/financing' },
+    { name: 'Contact', href: '/contact' },
+  ]},
+  { heading: 'Services', links: [
+    { name: 'Kitchen Cabinet Painting', href: '/kitchen-cabinet-painting-tampa' },
+    { name: 'Kitchen Cabinet Refacing', href: '/kitchen-cabinet-refacing-tampa' },
+    { name: 'Custom Kitchen Cabinets', href: '/custom-kitchen-cabinets-tampa' },
+    { name: 'Kitchen Cabinet Installation', href: '/kitchen-cabinet-installation-tampa' },
+    { name: 'Kitchen Remodeling', href: '/kitchen-remodeling-tampa' },
+  ]},
+  { heading: 'Service Areas', links: [
+    { name: 'All Service Areas', href: '/service-areas' },
+    { name: 'Westchase', href: '/service-areas/westchase' },
+    { name: 'Carrollwood', href: '/service-areas/carrollwood' },
+    { name: 'South Tampa', href: '/service-areas/south-tampa' },
+    { name: 'New Tampa', href: '/service-areas/new-tampa' },
+    { name: 'Citrus Park', href: '/service-areas/citrus-park' },
+    { name: 'Brandon', href: '/service-areas/brandon' },
+    { name: 'Riverview', href: '/service-areas/riverview' },
+  ]},
+  { heading: 'Company', links: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Our Process', href: '/process' },
+    { name: 'Warranty', href: '/warranty' },
+  ]},
+  { heading: 'Legal', links: [
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Cookie Policy', href: '/cookie-policy' },
+    { name: 'Terms', href: '/terms' },
+  ]},
+];
+---
+<BaseLayout title="Site Map | Tampa Kitchen Cabinets" description="Browse every page on the Tampa Kitchen Cabinets website.">
+  <main class="bg-white min-h-screen">
+    <StickyHeader />
+    <section class="pt-32 pb-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold text-[#1a2b4a] mb-10">Site Map</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {groups.map((g) => (
+            <div>
+              <h2 class="text-lg font-bold text-[#1a2b4a] mb-3 pb-2 border-b-2 border-[#c9a227]">{g.heading}</h2>
+              <ul class="space-y-2">
+                {g.links.map((l) => (<li><a href={l.href} class="text-gray-600 hover:text-[#c9a227] transition-colors">{l.name}</a></li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

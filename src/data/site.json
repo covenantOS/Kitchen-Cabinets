@@ -1,0 +1,35 @@
+{
+  "brandName": "Tampa Kitchen Cabinets",
+  "legalEntity": "Westchase Painting Company LLC",
+  "attribution": "A division of Westchase Painting Company",
+  "tagline": "Tampa's Kitchen Cabinet Specialists",
+  "domain": "kitchencabinetsoftampa.com",
+  "url": "https://kitchencabinetsoftampa.com",
+  "sisterName": "Westchase Painting Company",
+  "sisterUrl": "https://westchasepainting.com",
+  "phoneDisplay": "(813) 555-0199",
+  "phoneE164": "+18135550199",
+  "email": "info@kitchencabinetsoftampa.com",
+  "address": {
+    "street": "8770 Huntfield Street",
+    "city": "Tampa",
+    "region": "FL",
+    "postalCode": "33635",
+    "country": "US"
+  },
+  "geo": { "lat": 28.0608, "lng": -82.5806 },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "googleProfile": ""
+  },
+  "rating": { "value": "5.0", "count": 0 },
+  "parentRatingValue": "5.0",
+  "projectsCompleted": "500+",
+  "craftYears": "25+",
+  "parentFoundedYear": 2020,
+  "formSource": "tampa-kitchen-cabinets",
+  "acornFinanceUrl": "https://www.acornfinance.com/pre-qualify/?d=BLYXZ",
+  "ga4Id": "",
+  "gtmId": ""
+}

@@ -1,0 +1,84 @@
+---
+import { site } from '../lib/site';
+---
+<div id="exit-popup" class="hidden fixed inset-0 z-[90] bg-black/60 items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative">
+    <button id="exit-popup-close" class="absolute top-3 right-3 w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 text-2xl" aria-label="Close">×</button>
+    <div class="text-center mb-5">
+      <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-[#c9a227]/15 flex items-center justify-center">
+        <svg class="w-7 h-7 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-[#1a2b4a]">Before you go</h3>
+      <p class="text-gray-600 mt-2">Leave your number and we will reach out to schedule your free in-home kitchen cabinet estimate. No pressure, no obligation.</p>
+    </div>
+    <form id="exit-popup-form" class="space-y-3" novalidate>
+      <input type="text" id="exit-name" name="name" required autocomplete="name" placeholder="Your name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent text-[#1a2b4a]" />
+      <input type="tel" id="exit-phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="Phone number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent text-[#1a2b4a]" />
+      <button type="submit" id="exit-submit" class="w-full py-3 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-colors">Request My Free Estimate</button>
+      <p id="exit-status" class="text-center text-sm hidden"></p>
+    </form>
+    <p class="text-center text-xs text-gray-400 mt-3">Or call us at {site.phoneDisplay}</p>
+  </div>
+</div>
+
+<script define:vars={{ FORM_SOURCE: site.formSource, PHONE: site.phoneDisplay }}>
+  (function () {
+    var popup = document.getElementById('exit-popup');
+    if (!popup) return;
+    if (sessionStorage.getItem('exitPopupShown') === '1') return;
+    var shown = false;
+    function open() {
+      if (shown) return;
+      shown = true;
+      sessionStorage.setItem('exitPopupShown', '1');
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+    }
+    function close() { popup.classList.add('hidden'); popup.classList.remove('flex'); }
+
+    // Desktop: mouse leaves toward the top. Mobile: 35s idle.
+    var isDesktop = window.matchMedia && window.matchMedia('(min-width: 1024px)').matches;
+    if (isDesktop) {
+      document.addEventListener('mouseout', function (e) { if (e.clientY <= 0) open(); });
+    } else {
+      setTimeout(open, 35000);
+    }
+    document.getElementById('exit-popup-close').addEventListener('click', close);
+    popup.addEventListener('click', function (e) { if (e.target === popup) close(); });
+
+    var form = document.getElementById('exit-popup-form');
+    var status = document.getElementById('exit-status');
+    var submit = document.getElementById('exit-submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('exit-name').value.trim();
+      var phone = document.getElementById('exit-phone').value.trim();
+      if (!name || !phone) return;
+      submit.disabled = true; submit.textContent = 'Sending...';
+      fetch('/api/exit-intent', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: phone, source: FORM_SOURCE, popup: 'exit-intent', url: location.href })
+      }).then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (j) {
+          status.classList.remove('hidden');
+          if (j && j.success) {
+            status.className = 'text-center text-sm text-green-600';
+            status.textContent = 'Thanks! We will call you shortly.';
+            form.querySelectorAll('input').forEach(function (i) { i.disabled = true; });
+            submit.textContent = 'Request sent';
+            setTimeout(close, 2500);
+          } else {
+            status.className = 'text-center text-sm text-red-600';
+            status.textContent = 'Something went wrong. Please call ' + PHONE + '.';
+            submit.disabled = false; submit.textContent = 'Request My Free Estimate';
+          }
+        })
+        .catch(function () {
+          status.classList.remove('hidden');
+          status.className = 'text-center text-sm text-red-600';
+          status.textContent = 'Something went wrong. Please call ' + PHONE + '.';
+          submit.disabled = false; submit.textContent = 'Request My Free Estimate';
+        });
+    });
+  })();
+</script>

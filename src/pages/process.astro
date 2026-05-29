@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+const steps = [
+  { title: 'Free in-home estimate', time: '30-45 min', body: 'Will or Leandro walks your kitchen, measures, and talks through exactly what needs to happen to get the result you want. You leave with a written, line-item quote, not a verbal guess.', points: ['Same-week scheduling', 'Line-item quote, no surprise add-ons', 'No pressure, no deposit'] },
+  { title: 'Design, color & finish', time: 'About 1 week', body: 'We help you lock in door style, color, sheen, and hardware, with samples you can see in your own kitchen light. For refacing and custom work, we confirm materials and layout before anything is ordered.', points: ['Door style & material selection', 'On-cabinet color and finish samples', 'Hardware and storage options'] },
+  { title: 'Prep & protection', time: 'Day 1', body: 'Prep is where most cabinet jobs fail. We remove and label every door and drawer, clean and degrease, sand for adhesion, and protect your floors, counters, and appliances before any finish goes on. For installs, we remove the old cabinets cleanly.', points: ['Doors and drawers labeled and removed', 'TSP degrease, sand, and tack', 'Floors, counters, and appliances protected'] },
+  { title: 'Prime, build & base coats', time: 'Day 1-3', body: 'Every surface gets a proper bonding primer. Painted cabinets are sprayed in a controlled setup for a factory-smooth base. For custom and installation projects, boxes are fabricated, assembled, and prepped to set.', points: ['Cabinet-grade bonding primer', 'Sprayed, not brushed', 'Custom boxes built to spec'] },
+  { title: 'Finish coats & installation', time: 'Day 2-5', body: 'Painted cabinets receive multiple sprayed finish coats with light sanding between for a glass-smooth result. New and custom cabinetry is set, leveled, scribed to the walls, and secured, with crown molding and hardware installed.', points: ['Multiple sprayed finish coats', 'Level, scribed, and secured installs', 'Crown molding and soft-close hardware'] },
+  { title: 'Quality inspection', time: 'Final day', body: 'Before we tell you the job is done, John (our Director of Field Operations) does a full walk of the kitchen, flashlight in hand. If he spots a thin spot, a drip, or a door out of alignment, the crew fixes it before you ever see it.', points: ['Owner / foreman walk-through', 'Punch list addressed same day', 'Doors and drawers adjusted'] },
+  { title: 'Final walk-through & warranty', time: '30 min', body: 'We walk the finished kitchen with you, sign off on the work together, and hand you a written workmanship warranty you can hold in your hand. If anything comes up later, you call us directly.', points: ['Written, signed warranty', 'Care instructions for the finish', 'Direct line for any follow-up'] },
+];
+const stats = [
+  { value: 'Same week', label: 'Free estimate' },
+  { value: '1-7 days', label: 'Typical project' },
+  { value: 'Cabinet-grade', label: 'Sprayed finishes' },
+  { value: 'In writing', label: 'Workmanship warranty' },
+];
+---
+<BaseLayout title="Our Process | Tampa Kitchen Cabinets" description="See exactly how Tampa Kitchen Cabinets works, from your free in-home estimate to the final walk-through and written warranty on your finished kitchen.">
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Our Process</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Seven steps. One flawless kitchen.</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">From the first phone call to the final warranty walk-through, here is exactly what happens when you hire {site.brandName}.</p>
+      </div>
+    </section>
+
+    <section class="bg-[#1a2b4a] border-y-4 border-[#c9a227]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {stats.map((s) => (<div><p class="text-2xl sm:text-3xl font-extrabold text-[#c9a227]">{s.value}</p><p class="text-gray-300 text-sm mt-1">{s.label}</p></div>))}
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        {steps.map((s, i) => (
+          <div class="flex gap-5 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8">
+            <span class="flex-shrink-0 w-12 h-12 rounded-full bg-[#1a2b4a] text-[#c9a227] font-extrabold text-xl flex items-center justify-center">{i + 1}</span>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <h2 class="text-xl font-bold text-[#1a2b4a]">{s.title}</h2>
+                <span class="text-xs font-semibold text-[#c9a227] bg-[#c9a227]/10 px-2.5 py-1 rounded-full">{s.time}</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed mb-3">{s.body}</p>
+              <ul class="grid sm:grid-cols-3 gap-2">
+                {s.points.map((p) => (<li class="flex items-start gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{p}</li>))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-white mb-4">Ready to start your kitchen?</h2>
+        <p class="text-xl text-gray-300 mb-8">Book your free in-home estimate today. A real person will walk it with you.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get a Free Estimate</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </section>
+
+    <ContactForm formLocation="process" />
+    <Footer />
+  </main>
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

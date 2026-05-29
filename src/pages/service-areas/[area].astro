@@ -1,0 +1,17 @@
+---
+import { getCollection, render } from 'astro:content';
+import AreaPageLayout from '../../layouts/AreaPageLayout.astro';
+
+export async function getStaticPaths() {
+  const areas = await getCollection('areas');
+  return areas
+    .filter((a) => !a.data.draft)
+    .map((entry) => ({ params: { area: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<AreaPageLayout area={entry.data} slug={entry.id}>
+  <Content />
+</AreaPageLayout>

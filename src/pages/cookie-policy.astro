@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../lib/site';
+---
+<BaseLayout title="Cookie Policy | Tampa Kitchen Cabinets" description="How Tampa Kitchen Cabinets uses cookies and similar technologies." noindex={true}>
+  <main class="bg-white min-h-screen">
+    <StickyHeader />
+    <section class="pt-32 pb-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 article-content">
+        <h1 class="text-4xl font-bold text-[#1a2b4a] mb-2">Cookie Policy</h1>
+        <p class="text-sm text-gray-500 mb-8">Last updated: May 2026</p>
+        <p>{site.brandName} uses cookies and similar technologies on {site.domain} to make the site work and to understand how it is used.</p>
+        <h2>Types of cookies we use</h2>
+        <ul>
+          <li><strong>Essential:</strong> required for the site to function, such as remembering form progress.</li>
+          <li><strong>Analytics:</strong> tools like Google Analytics help us measure traffic and improve the site. These load only when analytics is enabled.</li>
+          <li><strong>Marketing:</strong> if enabled, these help us measure the performance of our ads and campaigns.</li>
+        </ul>
+        <h2>Managing cookies</h2>
+        <p>You can control or delete cookies through your browser settings. Disabling some cookies may affect how the site works.</p>
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

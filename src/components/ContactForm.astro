@@ -1,0 +1,270 @@
+---
+// Multi-step estimate request form for Tampa Kitchen Cabinets.
+// Steps: 1=contact info, 2=project type+address, 3=timeline+message.
+// Every submission is tagged with source = site.formSource for attribution.
+import { site } from '../lib/site';
+const { standalone = true, formLocation = 'website' } = Astro.props as { standalone?: boolean; formLocation?: string };
+---
+{standalone && (
+  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Request Your Free Estimate</h2><p class="text-lg text-gray-600">Tell us about your kitchen. We respond within one business day.</p></div>`} />
+)}
+<form id="cf-form" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100" novalidate>
+  <div class="mb-6">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-sm font-medium text-[#1a2b4a]">Step <span id="cf-step-num">1</span> of 3</span>
+      <span class="text-sm text-gray-500"><span id="cf-step-pct">33</span>% complete</span>
+    </div>
+    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div id="cf-bar" class="h-full bg-[#c9a227] transition-all duration-500 ease-out" style="width:33.3333%"></div>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="cf-step" data-cf-step="1">
+    <div class="space-y-5">
+      <div class="text-center mb-6">
+        <p class="text-xl font-bold text-[#1a2b4a]">Let's get started</p>
+        <p class="text-gray-600 text-sm mt-1">How can we reach you?</p>
+      </div>
+      <div>
+        <label for="cf-name" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Your Name <span class="text-red-500">*</span></label>
+        <input type="text" id="cf-name" name="name" required autocomplete="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a]" placeholder="John Smith" />
+      </div>
+      <div>
+        <label for="cf-phone" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Phone Number <span class="text-red-500">*</span></label>
+        <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" inputmode="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a]" placeholder="(813) 555-0123" />
+      </div>
+      <div>
+        <label for="cf-email" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Email Address <span class="text-red-500">*</span></label>
+        <input type="email" id="cf-email" name="email" required autocomplete="email" inputmode="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a]" placeholder="john@example.com" />
+      </div>
+      <button type="button" id="cf-next-1" disabled class="w-full py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+        Continue
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="cf-step hidden" data-cf-step="2">
+    <div class="space-y-5">
+      <div class="text-center mb-6">
+        <p class="text-xl font-bold text-[#1a2b4a]">Tell us about your project</p>
+        <p class="text-gray-600 text-sm mt-1">What are you looking to do?</p>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Project Type <span class="text-red-500">*</span></label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="cf-project-types">
+          <button type="button" data-cf-ptype="Cabinet Painting" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#127912;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Cabinet Painting</span>
+          </button>
+          <button type="button" data-cf-ptype="Cabinet Refacing" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#128296;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Cabinet Refacing</span>
+          </button>
+          <button type="button" data-cf-ptype="Custom Cabinets" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#128715;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Custom Cabinets</span>
+          </button>
+          <button type="button" data-cf-ptype="Cabinet Installation" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#128736;&#65039;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Installation</span>
+          </button>
+          <button type="button" data-cf-ptype="Kitchen Remodel" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#127869;&#65039;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Kitchen Remodel</span>
+          </button>
+          <button type="button" data-cf-ptype="Not Sure Yet" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#10024;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Not Sure Yet</span>
+          </button>
+        </div>
+      </div>
+      <div class="relative">
+        <label for="cf-address" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Property Address <span class="text-red-500">*</span></label>
+        <input type="text" id="cf-address" name="address" autocomplete="street-address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a]" placeholder="123 Main St, Tampa, FL" />
+        <ul id="cf-address-suggestions" class="absolute z-20 left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-1 hidden max-h-60 overflow-y-auto"></ul>
+      </div>
+      <div class="flex gap-3">
+        <button type="button" data-cf-back="1" class="flex-1 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all">Back</button>
+        <button type="button" id="cf-next-2" disabled class="flex-1 py-3 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+          Continue
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="cf-step hidden" data-cf-step="3">
+    <div class="space-y-5">
+      <div class="text-center mb-6">
+        <p class="text-xl font-bold text-[#1a2b4a]">Almost done</p>
+        <p class="text-gray-600 text-sm mt-1">When are you looking to start?</p>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Timeline <span class="text-red-500">*</span></label>
+        <div class="space-y-2" id="cf-timelines">
+          <button type="button" data-cf-timeline="ASAP" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">As soon as possible</span></button>
+          <button type="button" data-cf-timeline="1-2 weeks" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">Within 1-2 weeks</span></button>
+          <button type="button" data-cf-timeline="1 month" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">Within a month</span></button>
+          <button type="button" data-cf-timeline="2-3 months" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">2-3 months out</span></button>
+          <button type="button" data-cf-timeline="Just exploring" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">Just exploring options</span></button>
+        </div>
+      </div>
+      <div>
+        <label for="cf-message" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Anything else we should know? <span class="font-normal text-gray-500">(optional)</span></label>
+        <textarea id="cf-message" name="message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a] resize-none" placeholder="Cabinet count, colors, door style, timeline..."></textarea>
+      </div>
+      <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+        <input type="checkbox" id="cf-sms" checked class="mt-0.5 w-4 h-4 text-[#c9a227] border-gray-300 rounded focus:ring-[#c9a227]" />
+        <label for="cf-sms" class="text-sm text-gray-600">Text me updates about my project</label>
+      </div>
+      <div id="cf-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 flex items-center gap-3">
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p>Something went wrong. Please call us at {site.phoneDisplay} to reach a real person.</p>
+      </div>
+      <div class="flex gap-3">
+        <button type="button" data-cf-back="2" class="flex-1 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all">Back</button>
+        <button type="submit" id="cf-submit" disabled class="flex-1 py-3 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">Get My Free Quote</button>
+      </div>
+      <p class="text-center text-gray-500 text-xs">A real team member will follow up personally, not an auto-reply.</p>
+    </div>
+  </div>
+</form>
+{standalone && (
+  <Fragment set:html={`</div></section>`} />
+)}
+
+<script define:vars={{ FORM_SOURCE: site.formSource, PHONE: site.phoneDisplay, FORM_LOCATION: formLocation }}>
+  (function () {
+    var form = document.getElementById('cf-form');
+    if (!form) return;
+    var data = { name:'', phone:'', email:'', address:'', projectType:'', timeline:'', message:'', smsOptIn:true };
+    var step = 1;
+    var formStarted = false;
+
+    function trackStart() {
+      if (formStarted) return;
+      formStarted = true;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event:'form_start', form_name:'estimate_form', form_location:FORM_LOCATION, source:FORM_SOURCE });
+    }
+    function trackSubmit(success) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event:'form_submission', form_name:'estimate_form', form_location:FORM_LOCATION, contact_method:'form', success: !!success, source:FORM_SOURCE });
+      if (success) window.dataLayer.push({ event:'estimate_request', source:FORM_SOURCE, service_type: data.projectType });
+    }
+
+    function show(n) {
+      step = n;
+      document.querySelectorAll('#cf-form .cf-step').forEach(function (el) {
+        el.classList.toggle('hidden', el.getAttribute('data-cf-step') !== String(n));
+      });
+      document.getElementById('cf-step-num').textContent = String(n);
+      document.getElementById('cf-step-pct').textContent = String(Math.round((n / 3) * 100));
+      document.getElementById('cf-bar').style.width = ((n / 3) * 100) + '%';
+    }
+
+    var nameI = document.getElementById('cf-name');
+    var phoneI = document.getElementById('cf-phone');
+    var emailI = document.getElementById('cf-email');
+    var next1 = document.getElementById('cf-next-1');
+    function updateNext1() { next1.disabled = !(nameI.value && phoneI.value && emailI.value); }
+    [nameI, phoneI, emailI].forEach(function (el) {
+      el.addEventListener('input', function () { trackStart(); data[el.name] = el.value; updateNext1(); });
+    });
+    next1.addEventListener('click', function () { if (!next1.disabled) show(2); });
+
+    var addrI = document.getElementById('cf-address');
+    var next2 = document.getElementById('cf-next-2');
+    function updateNext2() { next2.disabled = !(data.address && data.projectType); }
+    document.querySelectorAll('.cf-ptype').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        data.projectType = btn.getAttribute('data-cf-ptype');
+        document.querySelectorAll('.cf-ptype').forEach(function (b) { b.classList.remove('border-[#c9a227]', 'bg-[#c9a227]/10'); b.classList.add('border-gray-200'); });
+        btn.classList.remove('border-gray-200'); btn.classList.add('border-[#c9a227]', 'bg-[#c9a227]/10');
+        updateNext2();
+      });
+    });
+
+    var addrSugg = document.getElementById('cf-address-suggestions');
+    var addrTimer;
+    addrI.addEventListener('input', function () {
+      data.address = addrI.value; updateNext2();
+      var v = addrI.value.trim();
+      clearTimeout(addrTimer);
+      if (v.length < 4) { addrSugg.classList.add('hidden'); addrSugg.innerHTML = ''; return; }
+      addrTimer = setTimeout(function () {
+        fetch('/api/places-autocomplete?input=' + encodeURIComponent(v))
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            var preds = (j && j.predictions) || [];
+            if (!preds.length) { addrSugg.classList.add('hidden'); addrSugg.innerHTML = ''; return; }
+            addrSugg.innerHTML = preds.slice(0, 5).map(function (p) {
+              var d = (p.description || '').replace(/"/g, '&quot;');
+              return '<li class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm" data-val="' + d + '">' + d + '</li>';
+            }).join('');
+            addrSugg.classList.remove('hidden');
+            addrSugg.querySelectorAll('li').forEach(function (li) {
+              li.addEventListener('click', function () {
+                addrI.value = li.getAttribute('data-val') || ''; data.address = addrI.value; updateNext2(); addrSugg.classList.add('hidden');
+              });
+            });
+          })
+          .catch(function () {});
+      }, 300);
+    });
+    document.addEventListener('click', function (e) { if (e.target !== addrI) addrSugg.classList.add('hidden'); });
+    next2.addEventListener('click', function () { if (!next2.disabled) show(3); });
+
+    var submitBtn = document.getElementById('cf-submit');
+    var msgI = document.getElementById('cf-message');
+    var smsI = document.getElementById('cf-sms');
+    var errorEl = document.getElementById('cf-error');
+    function updateSubmit() { submitBtn.disabled = !data.timeline; }
+    document.querySelectorAll('.cf-timeline').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        data.timeline = btn.getAttribute('data-cf-timeline');
+        document.querySelectorAll('.cf-timeline').forEach(function (b) { b.classList.remove('border-[#c9a227]', 'bg-[#c9a227]/10'); b.classList.add('border-gray-200'); });
+        btn.classList.remove('border-gray-200'); btn.classList.add('border-[#c9a227]', 'bg-[#c9a227]/10');
+        updateSubmit();
+      });
+    });
+    msgI.addEventListener('input', function () { data.message = msgI.value; });
+    smsI.addEventListener('change', function () { data.smsOptIn = smsI.checked; });
+
+    document.querySelectorAll('[data-cf-back]').forEach(function (btn) {
+      btn.addEventListener('click', function () { show(parseInt(btn.getAttribute('data-cf-back'), 10)); });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!data.timeline) return;
+      submitBtn.disabled = true;
+      var orig = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<svg class="animate-spin w-5 h-5 inline-block mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...';
+      errorEl.classList.add('hidden');
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.assign({}, data, { isPartial: false, source: FORM_SOURCE, formLocation: FORM_LOCATION }))
+      }).then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (j) {
+          if (j && j.success) {
+            trackSubmit(true);
+            submitBtn.innerHTML = 'Sent! Redirecting...';
+            setTimeout(function () { window.location.href = '/thank-you'; }, 1200);
+          } else { throw new Error('bad'); }
+        })
+        .catch(function () {
+          errorEl.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = orig;
+          trackSubmit(false);
+        });
+    });
+  })();
+</script>

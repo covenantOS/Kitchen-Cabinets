@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { site, telHref } from '../lib/site';
+---
+<BaseLayout title="Page Not Found | Tampa Kitchen Cabinets" description="The page you are looking for could not be found." noindex={true}>
+  <main class="bg-white min-h-screen flex flex-col">
+    <StickyHeader />
+    <section class="flex-1 flex items-center justify-center pt-32 pb-20">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-7xl font-extrabold text-[#c9a227] mb-2">404</p>
+        <h1 class="text-3xl font-bold text-[#1a2b4a] mb-4">We couldn't find that page</h1>
+        <p class="text-lg text-gray-600 mb-8">It may have moved. Try one of these, or call us at {site.phoneDisplay}.</p>
+        <div class="flex flex-wrap gap-3 justify-center mb-8">
+          <a href="/" class="px-5 py-2.5 bg-[#1a2b4a] text-white font-semibold rounded-lg hover:bg-[#2a3d5c] transition-all">Home</a>
+          <a href="/kitchen-cabinet-painting-tampa" class="px-5 py-2.5 border border-gray-300 text-[#1a2b4a] font-semibold rounded-lg hover:border-[#c9a227] transition-all">Cabinet Painting</a>
+          <a href="/custom-kitchen-cabinets-tampa" class="px-5 py-2.5 border border-gray-300 text-[#1a2b4a] font-semibold rounded-lg hover:border-[#c9a227] transition-all">Custom Cabinets</a>
+          <a href="/gallery" class="px-5 py-2.5 border border-gray-300 text-[#1a2b4a] font-semibold rounded-lg hover:border-[#c9a227] transition-all">Gallery</a>
+          <a href="/contact" class="px-5 py-2.5 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Free Estimate</a>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

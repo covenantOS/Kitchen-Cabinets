@@ -1,0 +1,175 @@
+---
+/**
+ * JSON-LD schema for Tampa Kitchen Cabinets (a division of Westchase Painting Company LLC).
+ * One wrapper component driven by a `schema` prop.
+ *   schema="organization" | "website"        — emitted on every page via BaseLayout
+ *   schema="localBusiness"  [areaOverride]    — KitchenRemodeler-style LocalBusiness
+ *   schema="servicesCatalog"                  — homepage OfferCatalog of the 5 services
+ *   schema="servicePage" serviceName serviceSlug description [areaName areaSlug]
+ *   schema="faq" faqItems=[{q,a}]             — FAQPage from passed items (no hardcoding)
+ *   schema="breadcrumb" breadcrumbItems=[{name,url}]
+ */
+import { site } from '../lib/site';
+
+export interface Props {
+  schema: 'localBusiness' | 'servicesCatalog' | 'servicePage' | 'faq' | 'breadcrumb' | 'organization' | 'website';
+  areaOverride?: string;
+  serviceName?: string;
+  serviceSlug?: string;
+  description?: string;
+  areaName?: string;
+  areaSlug?: string;
+  breadcrumbItems?: Array<{ name: string; url: string }>;
+  faqItems?: Array<{ q: string; a: string }>;
+}
+
+const props = Astro.props as Props;
+const U = site.url;
+const BUSINESS_ID = `${U}/#business`;
+const ORG_ID = `${U}/#organization`;
+
+const SERVICES = [
+  { slug: 'kitchen-cabinet-painting-tampa', name: 'Kitchen Cabinet Painting', description: 'Professional kitchen cabinet painting in Tampa with factory-smooth sprayed finishes at a fraction of replacement cost.' },
+  { slug: 'kitchen-cabinet-refacing-tampa', name: 'Kitchen Cabinet Refacing', description: 'Cabinet refacing in Tampa: new doors, drawer fronts, and veneers over your existing cabinet boxes.' },
+  { slug: 'custom-kitchen-cabinets-tampa', name: 'Custom Kitchen Cabinets', description: 'Custom kitchen cabinets in Tampa designed and built to your space, style, and storage needs.' },
+  { slug: 'kitchen-cabinet-installation-tampa', name: 'Kitchen Cabinet Installation', description: 'Precise kitchen cabinet installation in Tampa, including leveling, scribing, crown, and hardware.' },
+  { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling', description: 'Full kitchen remodeling in Tampa managed by cabinet specialists, from design through final walk-through.' },
+];
+
+const defaultAreas = ['Tampa', 'Westchase', 'Carrollwood', 'South Tampa', 'New Tampa', 'Citrus Park', 'Brandon', 'Riverview'];
+const cityNode = (name: string) => ({ '@type': 'City', name, containedInPlace: { '@type': 'State', name: 'Florida' } });
+const sameAs = [site.social.facebook, site.social.instagram, site.social.googleProfile].filter(Boolean);
+
+let json: Record<string, unknown> = {};
+
+if (props.schema === 'localBusiness') {
+  const areaServed = props.areaOverride ? [cityNode(props.areaOverride)] : defaultAreas.map(cityNode);
+  const description = props.areaOverride
+    ? `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling in ${props.areaOverride}, FL and the greater Tampa Bay area. A division of ${site.legalEntity}. Licensed, insured, free estimates.`
+    : `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling across Tampa and the surrounding Tampa Bay area. A division of ${site.legalEntity}. Licensed, insured, free estimates.`;
+
+  json = {
+    '@context': 'https://schema.org',
+    '@type': ['HomeAndConstructionBusiness', 'GeneralContractor'],
+    '@id': BUSINESS_ID,
+    additionalType: 'https://www.productontology.org/id/Kitchen_remodeling',
+    name: site.brandName,
+    legalName: site.legalEntity,
+    alternateName: ['Tampa Kitchen Cabinets', 'Kitchen Cabinets of Tampa'],
+    image: [`${U}/og-image.png`, `${U}/gallery/white-island-kitchen.webp`, `${U}/logo.png`],
+    logo: `${U}/logo.png`,
+    description,
+    url: U,
+    telephone: site.phoneE164,
+    email: site.email,
+    parentOrganization: { '@type': 'Organization', name: site.legalEntity, url: site.sisterUrl },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressRegion: site.address.region,
+      postalCode: site.address.postalCode,
+      addressCountry: site.address.country,
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
+    areaServed,
+    ...(sameAs.length ? { sameAs } : {}),
+    priceRange: '$$',
+    paymentAccepted: ['Cash', 'Check', 'Credit Card', 'Debit Card', 'Financing'],
+    currenciesAccepted: 'USD',
+    slogan: site.tagline,
+    knowsAbout: ['Kitchen Cabinet Painting', 'Cabinet Refacing', 'Custom Kitchen Cabinets', 'Cabinet Installation', 'Kitchen Remodeling'],
+    makesOffer: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: s.name, url: `${U}/${s.slug}` },
+    })),
+    openingHoursSpecification: site.hours.map((h) => ({
+      '@type': 'OpeningHoursSpecification', dayOfWeek: h.days, opens: h.opens, closes: h.closes,
+    })),
+    // AggregateRating is emitted only when the new GBP has real reviews (no fake markup).
+    ...(site.rating.count > 0
+      ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: site.rating.value, reviewCount: site.rating.count } }
+      : {}),
+  };
+} else if (props.schema === 'servicesCatalog') {
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    '@id': `${U}/#services-catalog`,
+    name: `${site.brandName} Services`,
+    itemListElement: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: s.name, url: `${U}/${s.slug}`, description: s.description },
+    })),
+  };
+} else if (props.schema === 'servicePage') {
+  const { serviceName = '', serviceSlug = '', description = '', areaName } = props;
+  const id = `${U}/${serviceSlug}#service`;
+  const areaServed = areaName ? cityNode(areaName) : { '@type': 'Place', name: 'Tampa Bay area' };
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': id,
+    name: areaName ? `${serviceName} in ${areaName}` : serviceName,
+    description,
+    serviceType: serviceName,
+    provider: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': BUSINESS_ID,
+      name: site.brandName,
+      telephone: site.phoneE164,
+      url: U,
+    },
+    areaServed,
+  };
+} else if (props.schema === 'faq') {
+  const items = props.faqItems ?? [];
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  };
+} else if (props.schema === 'breadcrumb') {
+  const items = props.breadcrumbItems ?? [{ name: 'Home', url: U }];
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, item: it.url })),
+  };
+} else if (props.schema === 'organization') {
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: site.brandName,
+    legalName: site.legalEntity,
+    alternateName: ['Tampa Kitchen Cabinets'],
+    url: U,
+    logo: `${U}/logo.png`,
+    parentOrganization: { '@type': 'Organization', name: site.legalEntity, url: site.sisterUrl },
+    ...(sameAs.length ? { sameAs } : {}),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: site.phoneE164,
+      contactType: 'customer service',
+      areaServed: 'US',
+      availableLanguage: ['English', 'Spanish', 'Portuguese'],
+    },
+  };
+} else if (props.schema === 'website') {
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${U}/#website`,
+    name: site.brandName,
+    alternateName: [site.legalEntity, 'Tampa Kitchen Cabinets', site.domain],
+    url: U,
+    publisher: { '@id': ORG_ID },
+  };
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(json)} />

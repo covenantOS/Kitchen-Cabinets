@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import GallerySection from '../components/GallerySection.astro';
+import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
+import CTASection from '../components/CTASection.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+import home from '../data/home.json';
+---
+<BaseLayout title="Kitchen & Cabinet Gallery | Tampa Kitchen Cabinets" description="Browse real kitchen cabinet projects across Tampa Bay: white shaker, two-tone, gray, and green cabinetry, plus custom islands and full kitchen remodels.">
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Gallery</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Tampa kitchen & cabinet projects</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Real cabinetry and kitchens from homes across Tampa Bay. Tap any photo to view it larger.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get a Free Estimate</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </section>
+
+    <BeforeAfterSlider items={home.beforeAfter} heading="Before & after" subheading="From build and installation to the finished kitchen. Drag to compare." background="gray" />
+    <GallerySection heading="Project photos" subheading="Filter by cabinet style." showFilters={true} background="white" />
+    <CTASection />
+    <ContactForm formLocation="gallery" />
+    <Footer />
+  </main>
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+interface AreaData {
+  title: string; neighborhood: string; pageTitle: string; description: string; heroImage: string;
+  intro: string; zips: string[]; landmarks: string[]; medianHome?: string; typicalKitchens?: string;
+  projects: Array<{ title: string; description: string }>;
+  gallery: Array<{ src: string; alt: string }>;
+  faqItems: Array<{ q: string; a: string }>;
+}
+interface Props { area: AreaData; slug: string; }
+const { area, slug } = Astro.props as Props;
+
+const SERVICES = [
+  { slug: 'kitchen-cabinet-painting-tampa', name: 'Cabinet Painting' },
+  { slug: 'kitchen-cabinet-refacing-tampa', name: 'Cabinet Refacing' },
+  { slug: 'custom-kitchen-cabinets-tampa', name: 'Custom Cabinets' },
+  { slug: 'kitchen-cabinet-installation-tampa', name: 'Cabinet Installation' },
+  { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling' },
+];
+const sm = (src: string) => src.replace(/\.webp$/, '-sm.webp');
+const breadcrumbs = [
+  { name: 'Home', url: `${site.url}/` },
+  { name: 'Service Areas', url: `${site.url}/service-areas` },
+  { name: area.neighborhood, url: `${site.url}/service-areas/${slug}` },
+];
+const extraSchema = [
+  { schema: 'localBusiness', areaOverride: area.neighborhood },
+  { schema: 'breadcrumb', breadcrumbItems: breadcrumbs },
+  ...(area.faqItems?.length ? [{ schema: 'faq', faqItems: area.faqItems }] : []),
+];
+---
+<BaseLayout title={area.pageTitle} description={area.description} ogImage={area.heroImage} extraSchema={extraSchema as any}>
+  <FloatingCallBadge />
+  <main class="min-h-screen bg-gray-50">
+    <StickyHeader />
+
+    <section class="relative pt-32 pb-20 bg-[#1a2b4a] overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-25">
+        <img src={area.heroImage} alt={area.title} loading="eager" fetchpriority="high" decoding="async" class="object-cover absolute inset-0 w-full h-full" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1a2b4a]/70 to-[#1a2b4a]/95 z-0"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <nav class="mb-6" aria-label="Breadcrumb">
+          <ol class="flex items-center justify-center gap-2 text-sm text-gray-400">
+            <li><a class="hover:text-white" href="/">Home</a></li>
+            <li>/</li>
+            <li><a class="hover:text-white" href="/service-areas">Service Areas</a></li>
+            <li>/</li>
+            <li class="text-white">{area.neighborhood}</li>
+          </ol>
+        </nav>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">{area.title}</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">{area.intro}</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all">Get a Free Estimate</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 order-1 space-y-12">
+            <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
+              <div class="article-content"><slot /></div>
+            </article>
+
+            {area.projects?.length > 0 && (
+              <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
+                <h2 class="text-2xl font-bold text-[#1a2b4a] mb-6">Cabinet projects in {area.neighborhood}</h2>
+                <div class="space-y-5">
+                  {area.projects.map((p) => (
+                    <div class="flex gap-4">
+                      <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#c9a227]/15 text-[#c9a227] flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                      </span>
+                      <div>
+                        <h3 class="font-bold text-[#1a2b4a]">{p.title}</h3>
+                        <p class="text-gray-600">{p.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {area.gallery?.length > 0 && (
+              <div id="gallery" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
+                <h2 class="text-2xl font-bold text-[#1a2b4a] mb-6">Recent work near {area.neighborhood}</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {area.gallery.map((g) => (
+                    <div class="cursor-pointer group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
+                      <img src={g.src} srcset={`${sm(g.src)} 640w, ${g.src} 1280w`} sizes="(max-width:768px) 100vw, 33vw" alt={g.alt} loading="lazy" decoding="async" width="640" height="480" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <div class="absolute inset-0 bg-[#1a2b4a]/0 group-hover:bg-[#1a2b4a]/30 transition-colors"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {area.faqItems?.length > 0 && (
+              <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
+                <h2 class="text-2xl font-bold text-[#1a2b4a] mb-6">{area.neighborhood} kitchen cabinet FAQs</h2>
+                <div class="space-y-4">
+                  {area.faqItems.map((item) => (
+                    <details class="group border border-gray-100 rounded-xl overflow-hidden">
+                      <summary class="flex items-center justify-between gap-3 cursor-pointer p-5 font-semibold text-[#1a2b4a] hover:bg-gray-50">
+                        {item.q}
+                        <svg class="w-5 h-5 text-[#c9a227] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                      </summary>
+                      <p class="px-5 pb-5 text-gray-600 leading-relaxed">{item.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <aside class="lg:col-span-1 order-2 lg:sticky lg:top-24 lg:self-start space-y-6">
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <div class="bg-gray-50 px-5 py-4 border-b border-gray-200"><h3 class="font-bold text-[#1a2b4a]">{area.neighborhood} at a glance</h3></div>
+              <dl class="p-5 space-y-4 text-sm">
+                {area.medianHome && (<div><dt class="text-gray-500">Median home value</dt><dd class="font-semibold text-[#1a2b4a]">{area.medianHome}</dd></div>)}
+                {area.zips?.length > 0 && (<div><dt class="text-gray-500">ZIP codes</dt><dd class="font-semibold text-[#1a2b4a]">{area.zips.join(', ')}</dd></div>)}
+                {area.typicalKitchens && (<div><dt class="text-gray-500">Typical kitchens</dt><dd class="text-[#1a2b4a]">{area.typicalKitchens}</dd></div>)}
+                {area.landmarks?.length > 0 && (<div><dt class="text-gray-500">Nearby</dt><dd class="text-[#1a2b4a]">{area.landmarks.join(', ')}</dd></div>)}
+              </dl>
+            </div>
+
+            <div class="bg-[#1a2b4a] rounded-xl p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">Free estimate in {area.neighborhood}</h3>
+              <p class="text-gray-300 text-sm mb-4">Talk to a real person and get an exact quote for your kitchen.</p>
+              <a href={telHref} class="flex items-center justify-center gap-2 w-full py-3 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all mb-2">{site.phoneDisplay}</a>
+              <a href="#contact" class="block text-center w-full py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Request estimate online</a>
+            </div>
+
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <div class="bg-gray-50 px-5 py-4 border-b border-gray-200"><h3 class="font-bold text-[#1a2b4a]">Our Services</h3></div>
+              <nav class="divide-y divide-gray-100">
+                {SERVICES.map((s) => (
+                  <a class="block px-5 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:pl-6 transition-all" href={`/${s.slug}`}>{s.name}</a>
+                ))}
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <ContactForm formLocation={`area:${slug}`} />
+    <Footer />
+  </main>
+
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

@@ -1,0 +1,245 @@
+---
+import Logo from './Logo.astro';
+import { site, telHref } from '../lib/site';
+
+const services = [
+  { title: 'Cabinet Painting', href: '/kitchen-cabinet-painting-tampa', description: 'Factory-smooth sprayed finishes' },
+  { title: 'Cabinet Refacing', href: '/kitchen-cabinet-refacing-tampa', description: 'New doors & fronts, same boxes' },
+  { title: 'Custom Cabinets', href: '/custom-kitchen-cabinets-tampa', description: 'Built for your space' },
+  { title: 'Cabinet Installation', href: '/kitchen-cabinet-installation-tampa', description: 'Precise, level installs' },
+  { title: 'Kitchen Remodeling', href: '/kitchen-remodeling-tampa', description: 'Full kitchen transformations' },
+];
+
+const areas = [
+  { title: 'Westchase', href: '/service-areas/westchase' },
+  { title: 'Carrollwood', href: '/service-areas/carrollwood' },
+  { title: 'South Tampa', href: '/service-areas/south-tampa' },
+  { title: 'New Tampa', href: '/service-areas/new-tampa' },
+  { title: 'Citrus Park', href: '/service-areas/citrus-park' },
+  { title: 'Brandon', href: '/service-areas/brandon' },
+  { title: 'Riverview', href: '/service-areas/riverview' },
+];
+
+const aboutItems = [
+  { title: 'About Us', href: '/about', description: 'Our team and story' },
+  { title: 'Our Process', href: '/process', description: 'How we work, step by step' },
+  { title: 'Reviews', href: '/reviews', description: 'What Tampa homeowners say' },
+  { title: 'Financing', href: '/financing', description: 'Flexible payment options' },
+];
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-3 lg:py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center" aria-label={`${site.brandName} home`}>
+        <Logo class="brand-logo text-white" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8" id="desktop-nav">
+        <a href="/" class="nav-link font-medium transition-colors hover:text-[#c9a227] text-white">Home</a>
+
+        <div class="relative nav-dropdown" data-key="services">
+          <button class="nav-link flex items-center gap-1 font-medium transition-colors hover:text-[#c9a227] text-white" aria-haspopup="true">
+            Services
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="dropdown-panel absolute top-full left-0 pt-2 z-50 hidden">
+            <div class="w-72 bg-white rounded-xl shadow-xl border border-gray-100 p-4">
+              <div class="flex flex-col gap-1">
+                {services.map((item) => (
+                  <a href={item.href} class="block px-3 py-2 rounded-md hover:bg-gray-50 transition-colors">
+                    <span class="font-medium text-[#1a2b4a] text-sm block">{item.title}</span>
+                    <span class="text-xs text-gray-500">{item.description}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative nav-dropdown" data-key="areas">
+          <button class="nav-link flex items-center gap-1 font-medium transition-colors hover:text-[#c9a227] text-white" aria-haspopup="true">
+            Service Areas
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="dropdown-panel absolute top-full left-0 pt-2 z-50 hidden">
+            <div class="w-64 bg-white rounded-xl shadow-xl border border-gray-100 p-4">
+              <div class="grid grid-cols-1 gap-1">
+                {areas.map((item) => (
+                  <a href={item.href} class="block px-3 py-2 rounded-md hover:bg-gray-50 transition-colors">
+                    <span class="font-medium text-[#1a2b4a] text-sm">{item.title}</span>
+                  </a>
+                ))}
+              </div>
+              <a href="/service-areas" class="block text-center text-[#c9a227] font-semibold mt-3 pt-3 border-t border-gray-100 hover:text-[#d4b84a] transition-colors text-sm">All service areas →</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/gallery" class="nav-link font-medium transition-colors hover:text-[#c9a227] text-white">Gallery</a>
+
+        <div class="relative nav-dropdown" data-key="about">
+          <button class="nav-link flex items-center gap-1 font-medium transition-colors hover:text-[#c9a227] text-white" aria-haspopup="true">
+            About
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="dropdown-panel absolute top-full left-0 pt-2 z-50 hidden">
+            <div class="w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+              {aboutItems.map((item) => (
+                <a href={item.href} class="block px-4 py-3 hover:bg-gray-50 transition-colors">
+                  <span class="font-medium text-[#1a2b4a] block">{item.title}</span>
+                  <span class="text-sm text-gray-500">{item.description}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a href="/contact" class="nav-link font-medium transition-colors hover:text-[#c9a227] text-white">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href={telHref} class="phone-link hidden md:flex items-center gap-2 font-semibold transition-colors text-white hover:text-[#c9a227]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+          {site.phoneDisplay}
+        </a>
+        <a href="/contact" class="hidden sm:inline-flex px-5 py-2.5 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          Free Estimate
+        </a>
+        <button id="mobile-menu-toggle" class="mobile-toggle lg:hidden p-2 rounded-lg transition-colors text-white hover:bg-white/20" aria-label="Toggle menu">
+          <svg id="mobile-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <svg id="mobile-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden mt-4 pb-4 border-t border-gray-200 bg-white max-h-[80vh] overflow-y-auto hidden rounded-b-lg">
+      <nav class="space-y-1 pt-4 px-2">
+        <a href="/" class="block px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">Home</a>
+
+        <div class="mobile-submenu" data-key="services">
+          <button class="mobile-submenu-toggle w-full flex items-center justify-between px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">
+            Services
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-submenu-panel ml-4 mt-1 space-y-1 border-l-2 border-[#c9a227] pl-4 hidden">
+            {services.map((item) => (
+              <a href={item.href} class="block py-2 text-gray-600 hover:text-[#c9a227]">{item.title}</a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mobile-submenu" data-key="areas">
+          <button class="mobile-submenu-toggle w-full flex items-center justify-between px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">
+            Service Areas
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-submenu-panel ml-4 mt-1 space-y-1 border-l-2 border-[#c9a227] pl-4 hidden">
+            {areas.map((item) => (
+              <a href={item.href} class="block py-2 text-gray-600 hover:text-[#c9a227]">{item.title}</a>
+            ))}
+            <a href="/service-areas" class="block py-2 text-[#c9a227] font-semibold">All service areas</a>
+          </div>
+        </div>
+
+        <a href="/gallery" class="block px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">Gallery</a>
+
+        <div class="mobile-submenu" data-key="about">
+          <button class="mobile-submenu-toggle w-full flex items-center justify-between px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">
+            About
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="mobile-submenu-panel ml-4 mt-1 space-y-1 border-l-2 border-[#c9a227] pl-4 hidden">
+            {aboutItems.map((item) => (
+              <a href={item.href} class="block py-2 text-gray-600 hover:text-[#c9a227]">{item.title}</a>
+            ))}
+          </div>
+        </div>
+
+        <a href="/contact" class="block px-4 py-3 text-[#1a2b4a] hover:bg-gray-50 rounded-lg font-medium">Contact</a>
+
+        <div class="pt-4 space-y-3 border-t border-gray-200 mt-4 px-2">
+          <a href={telHref} class="flex items-center justify-center gap-2 w-full py-3 border-2 border-[#1a2b4a] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#1a2b4a] hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            {site.phoneDisplay}
+          </a>
+          <a href="/contact" class="block w-full py-3 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg text-center hover:bg-[#d4b84a] transition-colors">
+            Get a Free Estimate
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const header = document.getElementById('site-header');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const openIcon = document.getElementById('mobile-icon-open');
+    const closeIcon = document.getElementById('mobile-icon-close');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const phoneLink = document.querySelector('.phone-link');
+    const brandLogo = document.querySelector('.brand-logo');
+
+    function setLight(el) { if (!el) return; el.classList.add('text-white'); el.classList.remove('text-[#1a2b4a]'); }
+    function setDark(el) { if (!el) return; el.classList.remove('text-white'); el.classList.add('text-[#1a2b4a]'); }
+
+    function applyScrolledStyles(scrolled) {
+      if (!header) return;
+      if (scrolled) {
+        header.classList.remove('bg-transparent', 'py-3', 'lg:py-4');
+        header.classList.add('bg-white', 'shadow-lg', 'py-2');
+        navLinks.forEach(setDark); setDark(phoneLink); setDark(brandLogo);
+      } else {
+        header.classList.add('bg-transparent', 'py-3', 'lg:py-4');
+        header.classList.remove('bg-white', 'shadow-lg', 'py-2');
+        navLinks.forEach(setLight); setLight(phoneLink); setLight(brandLogo);
+      }
+    }
+
+    function onScroll() {
+      const scrolled = window.scrollY > 50;
+      const mobileOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+      applyScrolledStyles(scrolled || mobileOpen);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('hidden');
+        if (openIcon && closeIcon) {
+          openIcon.classList.toggle('hidden', !open);
+          closeIcon.classList.toggle('hidden', open);
+        }
+        onScroll();
+      });
+    }
+
+    document.querySelectorAll('.mobile-submenu-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const parent = btn.closest('.mobile-submenu');
+        if (!parent) return;
+        const panel = parent.querySelector('.mobile-submenu-panel');
+        const svg = btn.querySelector('svg');
+        if (panel) panel.classList.toggle('hidden');
+        if (svg) svg.classList.toggle('rotate-180');
+      });
+    });
+
+    document.querySelectorAll('.nav-dropdown').forEach((wrap) => {
+      let timer;
+      const panel = wrap.querySelector('.dropdown-panel');
+      const svg = wrap.querySelector('button svg');
+      if (!panel) return;
+      const open = () => { if (timer) clearTimeout(timer); panel.classList.remove('hidden'); if (svg) svg.classList.add('rotate-180'); };
+      const close = () => { timer = setTimeout(() => { panel.classList.add('hidden'); if (svg) svg.classList.remove('rotate-180'); }, 150); };
+      wrap.addEventListener('mouseenter', open);
+      wrap.addEventListener('mouseleave', close);
+      panel.addEventListener('mouseenter', open);
+      panel.addEventListener('mouseleave', close);
+    });
+  })();
+</script>

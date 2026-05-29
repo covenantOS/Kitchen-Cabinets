@@ -1,0 +1,61 @@
+---
+interface Item { before: string; after: string; beforeAlt: string; afterAlt: string; caption?: string; }
+interface Props {
+  items: Item[];
+  heading?: string;
+  subheading?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+  background?: 'white' | 'gray';
+}
+const {
+  items = [],
+  heading = 'Before & After',
+  subheading,
+  beforeLabel = 'During Install',
+  afterLabel = 'Finished',
+  background = 'white',
+} = Astro.props as Props;
+const sm = (src: string) => src.replace(/\.webp$/, '-sm.webp');
+const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+---
+{items.length > 0 && (
+  <section class={`py-16 sm:py-20 ${bg}`}>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">Transformations</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">{heading}</h2>
+        {subheading && <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">{subheading}</p>}
+      </div>
+      <div class={`grid gap-8 ${items.length > 1 ? 'md:grid-cols-2' : 'max-w-3xl mx-auto'}`}>
+        {items.map((it) => (
+          <figure>
+            <div class="ba-wrap relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg select-none touch-none" style="--pos:50%">
+              <img src={it.after} srcset={`${sm(it.after)} 640w, ${it.after} 1280w`} sizes="(max-width:768px) 100vw, 50vw" alt={it.afterAlt} loading="lazy" decoding="async" width="640" height="480" class="absolute inset-0 w-full h-full object-cover" />
+              <img src={it.before} srcset={`${sm(it.before)} 640w, ${it.before} 1280w`} sizes="(max-width:768px) 100vw, 50vw" alt={it.beforeAlt} loading="lazy" decoding="async" width="640" height="480" class="ba-before absolute inset-0 w-full h-full object-cover" style="clip-path: inset(0 calc(100% - var(--pos)) 0 0)" />
+              <span class="absolute top-3 left-3 bg-[#1a2b4a]/85 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">{beforeLabel}</span>
+              <span class="absolute top-3 right-3 bg-[#c9a227] text-[#1a2b4a] text-xs font-bold px-2.5 py-1 rounded-full pointer-events-none">{afterLabel}</span>
+              <div class="ba-handle absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_8px_rgba(0,0,0,0.4)] pointer-events-none" style="left:var(--pos)">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#1a2b4a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-4 3 4 3m8-6l4 3-4 3"/></svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize m-0" aria-label="Drag to compare before and after" />
+            </div>
+            {it.caption && <figcaption class="text-center text-sm text-gray-500 mt-3">{it.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<script is:inline>
+  (function () {
+    document.querySelectorAll('.ba-wrap').forEach(function (wrap) {
+      var range = wrap.querySelector('.ba-range');
+      if (!range) return;
+      function set(v) { wrap.style.setProperty('--pos', v + '%'); }
+      range.addEventListener('input', function () { set(range.value); });
+    });
+  })();
+</script>

@@ -1,0 +1,21 @@
+---
+// Fires GA4/dataLayer events for phone clicks and CTA clicks.
+// Safe no-op if no analytics container is loaded (dataLayer always defined).
+---
+<script is:inline>
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+    function push(obj) { window.dataLayer.push(obj); if (typeof window.gtag === 'function') window.gtag('event', obj.event, obj); }
+    document.addEventListener('click', function (e) {
+      var el = e.target && e.target.closest ? e.target.closest('a, button') : null;
+      if (!el) return;
+      var href = el.getAttribute && el.getAttribute('href');
+      if (href && href.indexOf('tel:') === 0) {
+        push({ event: 'phone_click', phone_number: href.replace('tel:', '') });
+        return;
+      }
+      var cta = el.getAttribute && el.getAttribute('data-cta');
+      if (cta) push({ event: 'cta_click', cta_label: cta });
+    }, { passive: true });
+  })();
+</script>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { site, telHref } from '../lib/site';
+---
+<BaseLayout title="Thank You | Tampa Kitchen Cabinets" description="Thanks for reaching out to Tampa Kitchen Cabinets. We will be in touch within one business day." noindex={true}>
+  <main class="bg-white min-h-screen flex flex-col">
+    <StickyHeader />
+    <section class="flex-1 flex items-center justify-center pt-32 pb-20 bg-gray-50">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
+          <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a] mb-4">Thank you!</h1>
+        <p class="text-lg text-gray-600 mb-8">Your request is in. A real member of our team will follow up personally within one business day to talk through your kitchen and schedule your free estimate.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Back to Home</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#1a2b4a] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#1a2b4a] hover:text-white transition-all">Call {site.phoneDisplay}</a>
+        </div>
+        <p class="mt-8 text-sm text-gray-500">In the meantime, browse our <a href="/gallery" class="text-[#c9a227] hover:underline">kitchen gallery</a> for inspiration.</p>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

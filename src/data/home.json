@@ -1,0 +1,15 @@
+{
+  "heroEyebrow": "Tampa's Kitchen Cabinet Specialists",
+  "heroH1": "Tampa Kitchen Cabinets",
+  "heroPromise": "From a fresh cabinet finish to a full custom remodel, we build and finish kitchens Tampa Bay loves, with the same team and standards as Westchase Painting Company.",
+  "stats": [
+    { "value": "5.0★", "label": "Backed by Westchase Painting" },
+    { "value": "25+ yrs", "label": "Finish craftsmanship" },
+    { "value": "500+", "label": "Tampa Bay projects" },
+    { "value": "100%", "label": "Satisfaction focus" }
+  ],
+  "beforeAfter": [
+    { "before": "/gallery/ba-island-before.webp", "after": "/gallery/ba-island-after.webp", "beforeAlt": "White shaker kitchen during installation in a Tampa home, before countertops", "afterAlt": "Finished white shaker island kitchen in Tampa", "caption": "Custom island kitchen: during installation to finished" },
+    { "before": "/gallery/ba-twotone-before.webp", "after": "/gallery/ba-twotone-after.webp", "beforeAlt": "Two-tone kitchen cabinets being installed in a Tampa home", "afterAlt": "Finished two-tone kitchen with white uppers and a natural wood island in Tampa", "caption": "Two-tone kitchen: during build to finished" }
+  ]
+}

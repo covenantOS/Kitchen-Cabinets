@@ -1,0 +1,4 @@
+# Path safety nets (host canonicalization www -> apex is set via a Cloudflare Redirect Rule).
+/our-process            /process                  301
+/areas/*                /service-areas/:splat     301
+/services                /                         301

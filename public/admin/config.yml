@@ -1,0 +1,234 @@
+# Sveltia CMS configuration for Tampa Kitchen Cabinets.
+# Its OWN GitHub backend (separate content repo from Westchase Painting).
+# After deploying an OAuth helper (sveltia-cms-auth Worker), set `base_url`.
+backend:
+  name: github
+  repo: covenantOS/Kitchen-Cabinets
+  branch: main
+  # base_url: https://<your-sveltia-cms-auth>.workers.dev   # set after OAuth setup
+
+# Editors can preview drafts on a branch before publishing.
+publish_mode: editorial_workflow
+
+# New media uploads land here; the curated launch images live under
+# /gallery, /services, /areas, and /optimized (reference those paths directly).
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://kitchencabinetsoftampa.com
+logo_url: /logo.png
+
+collections:
+  # ---------------------------------------------------------------------------
+  - name: services
+    label: Service Pages
+    label_singular: Service Page
+    description: The five primary cabinet/kitchen service landing pages.
+    folder: src/content/services
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: "H1 Title (include exact-match keyword)", name: title, widget: string }
+      - { label: "Short name (nav/cards)", name: shortName, widget: string }
+      - { label: "Page title (<title>)", name: pageTitle, widget: string }
+      - { label: "Meta description", name: description, widget: text }
+      - { label: "Breadcrumb label", name: breadcrumb, widget: string }
+      - { label: "Hero subtitle", name: heroSubtitle, widget: text }
+      - { label: "Hero image", name: heroImage, widget: image, choose_url: true }
+      - { label: "Sort order", name: order, widget: number, default: 99, value_type: int }
+      - { label: "Card description (service grid)", name: cardDescription, widget: text }
+      - { label: "Card image", name: cardImage, widget: image, required: false, choose_url: true }
+      - { label: "Price anchor", name: priceAnchor, widget: string, required: false }
+      - { label: "Keywords", name: keywords, widget: list, required: false, field: { label: Keyword, name: keyword, widget: string } }
+      - label: "Process steps"
+        name: process
+        widget: list
+        required: false
+        fields:
+          - { label: Step title, name: title, widget: string }
+          - { label: Step description, name: description, widget: text }
+      - label: "FAQ items"
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: q, widget: string }
+          - { label: Answer, name: a, widget: text }
+      - label: "Gallery"
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - { label: Image, name: src, widget: image, choose_url: true }
+          - { label: Alt text, name: alt, widget: string }
+          - { label: Label, name: label, widget: string, required: false }
+      - label: "Before / After"
+        name: beforeAfter
+        widget: list
+        required: false
+        fields:
+          - { label: Before image, name: before, widget: image, choose_url: true }
+          - { label: After image, name: after, widget: image, choose_url: true }
+          - { label: Before alt, name: beforeAlt, widget: string }
+          - { label: After alt, name: afterAlt, widget: string }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: "Related service slugs", name: related, widget: list, required: false, field: { label: Slug, name: slug, widget: string } }
+      - { label: "Draft (hide from site)", name: draft, widget: boolean, default: false }
+      - { label: "Body (article)", name: body, widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  - name: areas
+    label: Service Area Pages
+    label_singular: Service Area
+    folder: src/content/areas
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: neighborhood
+    summary: "{{neighborhood}}"
+    fields:
+      - { label: "H1 Title", name: title, widget: string }
+      - { label: "Neighborhood", name: neighborhood, widget: string }
+      - { label: "Page title", name: pageTitle, widget: string }
+      - { label: "Meta description", name: description, widget: text }
+      - { label: "Hero image", name: heroImage, widget: image, choose_url: true }
+      - { label: "Sort order", name: order, widget: number, default: 99, value_type: int }
+      - { label: "Intro lede", name: intro, widget: text }
+      - { label: "ZIP codes", name: zips, widget: list, required: false, field: { label: ZIP, name: zip, widget: string } }
+      - { label: "Landmarks", name: landmarks, widget: list, required: false, field: { label: Landmark, name: landmark, widget: string } }
+      - { label: "Median home value", name: medianHome, widget: string, required: false }
+      - { label: "Typical kitchens", name: typicalKitchens, widget: string, required: false }
+      - label: "Representative projects"
+        name: projects
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+      - label: "Gallery"
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - { label: Image, name: src, widget: image, choose_url: true }
+          - { label: Alt text, name: alt, widget: string }
+      - label: "FAQ items"
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: q, widget: string }
+          - { label: Answer, name: a, widget: text }
+      - { label: "Draft", name: draft, widget: boolean, default: false }
+      - { label: "Body", name: body, widget: markdown }
+
+  # ---------------------------------------------------------------------------
+  - name: settings
+    label: Site Settings
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Business Info
+        file: src/data/site.json
+        fields:
+          - { label: Brand name, name: brandName, widget: string }
+          - { label: Legal entity, name: legalEntity, widget: string }
+          - { label: Attribution line, name: attribution, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Domain, name: domain, widget: string }
+          - { label: Site URL, name: url, widget: string }
+          - { label: Sister company name, name: sisterName, widget: string }
+          - { label: Sister company URL, name: sisterUrl, widget: string }
+          - { label: Phone (display), name: phoneDisplay, widget: string }
+          - { label: Phone (E.164 tel), name: phoneE164, widget: string }
+          - { label: Email, name: email, widget: string }
+          - label: Address
+            name: address
+            widget: object
+            fields:
+              - { label: Street, name: street, widget: string }
+              - { label: City, name: city, widget: string }
+              - { label: Region, name: region, widget: string }
+              - { label: Postal code, name: postalCode, widget: string }
+              - { label: Country, name: country, widget: string }
+          - label: Geo
+            name: geo
+            widget: object
+            fields:
+              - { label: Latitude, name: lat, widget: number, value_type: float }
+              - { label: Longitude, name: lng, widget: number, value_type: float }
+          - label: Social
+            name: social
+            widget: object
+            fields:
+              - { label: Facebook URL, name: facebook, widget: string, required: false }
+              - { label: Instagram URL, name: instagram, widget: string, required: false }
+              - { label: Google profile URL, name: googleProfile, widget: string, required: false }
+          - label: Rating
+            name: rating
+            widget: object
+            fields:
+              - { label: Rating value, name: value, widget: string }
+              - { label: Review count (0 hides schema rating), name: count, widget: number, value_type: int }
+          - { label: Parent rating value, name: parentRatingValue, widget: string }
+          - { label: Projects completed, name: projectsCompleted, widget: string }
+          - { label: Craft years, name: craftYears, widget: string }
+          - { label: Parent founded year, name: parentFoundedYear, widget: number, value_type: int }
+          - { label: Form source tag, name: formSource, widget: string }
+          - { label: Acorn Finance URL, name: acornFinanceUrl, widget: string }
+          - { label: GA4 ID, name: ga4Id, widget: string, required: false }
+          - { label: GTM ID, name: gtmId, widget: string, required: false }
+
+      - name: home
+        label: Homepage
+        file: src/data/home.json
+        fields:
+          - { label: Hero eyebrow, name: heroEyebrow, widget: string }
+          - { label: Hero H1, name: heroH1, widget: string }
+          - { label: Hero promise, name: heroPromise, widget: text }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Before / After
+            name: beforeAfter
+            widget: list
+            fields:
+              - { label: Before image, name: before, widget: image, choose_url: true }
+              - { label: After image, name: after, widget: image, choose_url: true }
+              - { label: Before alt, name: beforeAlt, widget: string }
+              - { label: After alt, name: afterAlt, widget: string }
+              - { label: Caption, name: caption, widget: string, required: false }
+
+      - name: reviews
+        label: Reviews
+        file: src/data/reviews.json
+        fields:
+          - { label: Internal note, name: note, widget: text, required: false }
+          - { label: Aggregate label, name: aggregateLabel, widget: string, required: false }
+          - label: Reviews
+            name: items
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5 }
+              - { label: Via, name: via, widget: string }
+              - { label: Text, name: text, widget: text }
+
+      - name: gallery
+        label: Gallery
+        file: src/data/gallery.json
+        fields:
+          - label: Gallery items
+            name: items
+            widget: list
+            fields:
+              - { label: Image, name: src, widget: image, choose_url: true }
+              - { label: Category, name: category, widget: string }
+              - { label: Alt text, name: alt, widget: string }

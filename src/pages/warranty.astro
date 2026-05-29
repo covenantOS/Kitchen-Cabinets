@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+const periods = [
+  { years: '2 Years', title: 'Cabinet finishing & painting', body: 'Covers peeling, blistering, flaking, chipping, or coating separation from properly prepared cabinet surfaces for 2 years from project completion.' },
+  { years: '2 Years', title: 'Cabinet installation', body: 'Covers workmanship on cabinet installation, including securing, leveling, and alignment, for 2 years from project completion.' },
+  { years: 'Manufacturer', title: 'Products & hardware', body: 'Cabinets, doors, hinges, slides, and finishes carry their own manufacturer warranties, which we register and pass through to you.' },
+];
+const covered = [
+  'Inspect the affected area to determine the cause of the issue',
+  'Repair workmanship defects in finishing or installation we performed',
+  'Provide the labor and materials needed to complete the repair',
+  'Re-prepare and refinish or re-set the specific area where the defect occurred',
+];
+const notCovered = [
+  'Normal wear, denting, scratching, or damage from daily use, moisture, or impact',
+  'Damage from water leaks, plumbing, flooding, storms, or other acts of God',
+  'Customer-supplied materials or work performed against our recommendation',
+  'Product defects covered separately by the manufacturer warranty',
+  'Color change or natural variation in wood and finishes over time',
+  'Work altered, refinished, or repaired by another party after our project',
+];
+const claim = [
+  { n: '1', title: 'Contact us', body: `Call ${site.phoneDisplay} or use our contact form. Share your name, address, and a description of the issue, with photos if possible.` },
+  { n: '2', title: 'We schedule an inspection', body: 'We schedule an on-site inspection within 14 business days. Have your original contract or invoice handy.' },
+  { n: '3', title: 'We determine coverage', body: 'We inspect the area to determine whether the issue was caused by our workmanship, and explain our findings clearly and honestly.' },
+  { n: '4', title: 'We fix it at no cost', body: 'If the inspection confirms a workmanship defect, we complete the repair at no additional cost, to the same standard as the original project.' },
+];
+---
+<BaseLayout title="Our Warranty | Tampa Kitchen Cabinets" description="Tampa Kitchen Cabinets backs every project with a written limited workmanship warranty and a hands-on satisfaction guarantee. See what is covered.">
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Limited Workmanship Warranty</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Our warranty promise</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">We stand behind every kitchen. Our limited workmanship warranty covers defects in our application and installation on completed projects.</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          {periods.map((p) => (
+            <div class="rounded-2xl border border-gray-200 p-6 text-center">
+              <p class="text-2xl font-extrabold text-[#c9a227]">{p.years}</p>
+              <h3 class="font-bold text-[#1a2b4a] mt-2 mb-2">{p.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{p.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+          <div>
+            <h2 class="text-2xl font-bold text-[#1a2b4a] mb-4">What coverage includes</h2>
+            <ul class="space-y-3">
+              {covered.map((c) => (<li class="flex items-start gap-3 text-gray-600"><svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{c}</li>))}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-[#1a2b4a] mb-4">What it does not cover</h2>
+            <ul class="space-y-3">
+              {notCovered.map((c) => (<li class="flex items-start gap-3 text-gray-600"><svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>{c}</li>))}
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-[#1a2b4a] mb-6">How to file a claim</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+          {claim.map((s) => (
+            <div class="flex gap-4">
+              <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a2b4a] text-[#c9a227] font-bold flex items-center justify-center">{s.n}</span>
+              <div><h3 class="font-bold text-[#1a2b4a] mb-1">{s.title}</h3><p class="text-gray-600">{s.body}</p></div>
+            </div>
+          ))}
+        </div>
+
+        <div class="rounded-2xl bg-[#1a2b4a] text-white p-8">
+          <h2 class="text-2xl font-bold mb-3">Our satisfaction guarantee</h2>
+          <p class="text-gray-300">Beyond this workmanship warranty, we conduct a final walk-through with you before any project is considered complete. If anything does not meet your expectations, cosmetic concerns, touch-ups, missed spots, or alignment, we address it on-site or within 48 hours at no additional charge. We are not finished until you are satisfied.</p>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-8 leading-relaxed">This limited workmanship warranty is provided by {site.legalEntity} (operating as {site.brandName}) and is the sole and exclusive warranty for workmanship, in lieu of all other warranties to the fullest extent permitted by Florida law. Liability is limited to repair of the specific area where the workmanship defect occurred and shall not exceed the original contract price. Product defects are covered by the applicable manufacturer warranty. This warranty applies to the original customer and is not transferable unless agreed in writing. Per Chapter 558, Florida Statutes, construction-defect claims are subject to the notice and cure provisions of that chapter. Warranty terms shown are a default and should be confirmed against your signed contract.</p>
+      </div>
+    </section>
+
+    <ContactForm formLocation="warranty" />
+    <Footer />
+  </main>
+  <AnalyticsListeners />
+</BaseLayout>
