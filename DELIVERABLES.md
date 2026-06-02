@@ -105,3 +105,33 @@ Engineered for **95+ / LCP < 2s / CLS ~0**, to be confirmed against the deployed
 ## 7. Images
 
 All imagery came from the provided Google Drive folder (Noble Tampa LLC → Service Line Database → Tampa Kitchen Cabinets), converted from HEIC/JPG to optimized WebP/AVIF and placed under `public/`. They are served via Cloudflare's CDN from `/public`. **Optional R2 migration:** upload `public/gallery|services|areas|optimized` to an R2 bucket and point a custom domain at it, then prefix image paths — the current `/public` delivery already runs on Cloudflare's edge, so this is an optional optimization, not a launch blocker.
+
+> **Photo gap to flag:** the provided set has no dedicated quartz-countertop close-ups and no classic old-kitchen "before" shots. The Countertops page and the before/after sliders reuse finished-kitchen photos that show countertops, labeled honestly. Add quartz close-ups and true before photos when available.
+
+---
+
+## 8. Changelog — positioning & offer overhaul
+
+Content/positioning overhaul on the existing stack (no rebuild, no stack change). Touched:
+
+**New flagship offer (the centerpiece):** built the $20,000 complete-kitchen promo into `src/data/site.json` (`offer`), a reusable **`PromoBlock.astro`** (price panel + "what's included" / "what adds to your price" transparency + financing tie-in), shown on the homepage and on the Cabinets, Remodeling, and Countertops pages. Always phrased "starting at $20,000," never a bare flat price. Added a priced **Offer** to schema.
+
+**Positioning fixed to semi-custom + fast + quartz-forward:**
+- **Kitchen Cabinets** page (`custom-kitchen-cabinets-tampa`, URL kept): rewritten around semi-custom reality (3-inch increments 9–36", wood or white interiors), one-week-start timeline, 3D design / pre-visit video / in-home samples, the $20,000 offer, with full custom/solid-wood positioned as the premium upgrade. Nav/card label is now **Kitchen Cabinets**.
+- **Kitchen Remodeling**: replaced the inflated "$25,000 to $75,000+" with realistic ranges + the promo; fixed the timeline to the real fast sequence; led with quartz and the scope/upsell ladder.
+- **Countertops** (NEW page `/kitchen-countertops-tampa`): quartz-forward, ~5-day timeline, from ~$7,500, added to nav/footer/schema/sidebars.
+- **Refacing / Installation / Painting**: kept for SEO, de-featured. **Cabinet Painting moved to last** everywhere. Voice scrubbed.
+- New **`QuartzEducation.astro`** block (quartz over granite) on the homepage, Countertops, and Remodeling pages.
+- **`HowItWorks.astro`** rebuilt around the real differentiators: pre-visit video, in-home measure with samples, photorealistic 3D design in about a day, fast install, walkthrough + warranty.
+
+**Navigation:** Services reordered to Kitchen Cabinets → Kitchen Remodeling → Countertops → Cabinet Refacing → Cabinet Installation → Cabinet Painting (header + footer + page sidebars + homepage cards, all driven by `order`).
+
+**Homepage:** hero rewritten to lead with "A complete new kitchen, starting at $20,000" (brand kept in the eyebrow, title tag, logo, and schema); offer/speed stat bar; PromoBlock; QuartzEducation; reordered service cards. Before/after, gallery, reviews, and service-area grid kept.
+
+**Lead form:** project types reordered (Kitchen Remodel and New Cabinets first, Countertops added, Cabinet Painting last); added a **homeowner** qualifier (step 2) and a **budget range** qualifier (step 3, required); intro now references the $20,000 offer. Multi-step UX and `source=tampa-kitchen-cabinets` tagging preserved.
+
+**Voice:** removed every banned construction ("custom is not just a nicer door," "more than," "seamless," em dashes) from user-facing copy. Pricing throughout now reflects the real model.
+
+**Note on the homepage H1:** per your direction it now leads with the offer rather than the brand name. The exact "Tampa Kitchen Cabinets" string stays in the hero eyebrow, the `<title>`, the logo, the footer, and schema, so brand SEO is intact. Say the word if you'd rather the H1 itself carry the brand.
+
+**One more placeholder for this overhaul:** an **estimator name** for the pre-visit-video copy (currently generic "your estimator" / "Will or Leandro"). Provide the name to personalize it.

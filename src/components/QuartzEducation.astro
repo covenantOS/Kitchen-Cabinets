@@ -1,0 +1,31 @@
+---
+interface Props { background?: 'white' | 'gray'; }
+const { background = 'white' } = Astro.props as Props;
+const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+const points = [
+  { title: 'Tougher under daily use', body: 'Quartz resists the chips and cracks that granite can develop at edges and corners over time.' },
+  { title: 'No sealing, ever', body: 'Granite needs periodic resealing to stay protected. Quartz is non-porous and never needs it.' },
+  { title: 'Stain and scratch resistant', body: 'Quartz wipes clean and shrugs off the wine, coffee, and oil a real kitchen throws at it.' },
+  { title: 'The look you picked', body: 'You get the exact color and pattern you chose, consistent across the kitchen, with no slab-to-slab surprises.' },
+];
+---
+<section class={`py-16 sm:py-20 ${bg}`}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 max-w-3xl mx-auto">
+      <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">Countertops</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">We steer almost every kitchen to quartz</h2>
+      <p class="text-lg text-gray-600 mt-3">Granite and quartz are not equal. Quartz holds up better in a working kitchen, costs you nothing in upkeep, and keeps the look you chose. Here is why we recommend it.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {points.map((p) => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="w-10 h-10 rounded-lg bg-[#c9a227]/15 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-bold text-[#1a2b4a] mb-1.5">{p.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,23 +1,25 @@
 ---
 const steps = [
-  { n: '1', title: 'Free In-Home Estimate', description: 'A real person visits your kitchen, measures, walks the scope with you, and answers every question. You get a written quote, not a guess.' },
-  { n: '2', title: 'Design, Color & Finish', description: 'We help you lock in door style, color, finish, and hardware, with samples you can see in your own kitchen light before anything is ordered.' },
-  { n: '3', title: 'Expert Cabinet Work', description: 'Our crew preps, primes, and sprays a factory-smooth finish, or builds and installs your cabinetry with precision. Premium, durable materials throughout.' },
-  { n: '4', title: 'Final Walk-Through', description: 'We review every door, drawer, and edge with you. We are not finished until you are happy, and your project is backed by a written workmanship warranty.' },
+  { n: '1', title: 'A video before we arrive', description: 'You get a short personal video that introduces your estimator and walks you through what to expect. You know exactly who is coming and why.' },
+  { n: '2', title: 'In-home measure with samples', description: 'We measure your kitchen and bring real door, finish, and color samples so you see your options in your own light before anything is ordered.' },
+  { n: '3', title: 'Photorealistic 3D design', description: 'We render your actual kitchen in the exact cabinets, colors, and finishes you picked, delivered in about a day. You review and approve it digitally.' },
+  { n: '4', title: 'Fast install', description: 'Semi-custom cabinets go in within a few days, quartz countertops template and fabricate in about five, and most kitchens finish in about a week.' },
+  { n: '5', title: 'Walkthrough and warranty', description: 'We review every door, drawer, and edge with you. You are covered by a written workmanship warranty, and we stand behind the work.' },
 ];
 ---
 <section class="py-16 sm:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">How It Works</p>
-      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">From first call to finished kitchen</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">A better way to buy a kitchen</h2>
+      <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">From the first video to the final walkthrough, the whole process is built to be fast, clear, and easy to say yes to.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
       {steps.map((s) => (
-        <div class="relative text-center opacity-0 translate-y-8 transition-all duration-700">
-          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-[#1a2b4a] text-[#c9a227] flex items-center justify-center text-2xl font-extrabold">{s.n}</div>
-          <h3 class="text-xl font-bold text-[#1a2b4a] mb-2">{s.title}</h3>
-          <p class="text-gray-600 leading-relaxed">{s.description}</p>
+        <div class="text-center opacity-0 translate-y-8 transition-all duration-700">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-[#1a2b4a] text-[#c9a227] flex items-center justify-center text-xl font-extrabold">{s.n}</div>
+          <h3 class="text-lg font-bold text-[#1a2b4a] mb-2">{s.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{s.description}</p>
         </div>
       ))}
     </div>

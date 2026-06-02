@@ -6,7 +6,7 @@ description: "Kitchen cabinet refacing in Tampa: new doors, drawer fronts, and m
 breadcrumb: "Cabinet Refacing"
 heroSubtitle: "Keep your layout and your solid boxes, and get an all-new door style, color, and soft-close hardware in just a few days."
 heroImage: "/services/refacing-hero.webp"
-order: 2
+order: 4
 cardDescription: "Swap dated doors and fronts for a brand-new style with matching veneer over your existing cabinet boxes."
 cardImage: "/gallery/two-tone-wood-white.webp"
 priceAnchor: "Most Tampa refacing projects: $4,000 to $10,000"
@@ -37,7 +37,7 @@ faqItems:
   - q: "What door styles and materials can I choose?"
     a: "We offer shaker, slab, and raised-panel doors in real wood, painted MDF, and thermofoil. Real wood suits homeowners who want natural grain or a stained look, painted MDF gives a smooth modern face, and thermofoil is a durable, easy-clean option that handles Florida humidity well. We help you match the door material and the box veneer so the finished kitchen looks cohesive."
   - q: "Do you reface the cabinet boxes too, or only the doors?"
-    a: "Both. A proper reface includes a matching wood veneer or laminate applied to the visible faces, exposed sides, and end panels of your boxes, not just new doors. That is what makes the whole kitchen look new rather than leaving mismatched old box fronts next to fresh doors. The interiors stay as-is since they are not visible when the doors are closed."
+    a: "Both. A proper reface covers the doors and applies a matching wood veneer or laminate to the visible faces, exposed sides, and end panels of your boxes. That is what makes the whole kitchen look new rather than leaving mismatched old box fronts next to fresh doors. The interiors stay as-is since they are not visible when the doors are closed."
   - q: "Does refacing include soft-close hinges and new hardware?"
     a: "Yes. New concealed soft-close hinges come standard with our refacing, and you choose the knobs or pulls that finish the look. Soft-close hardware is one of the upgrades homeowners notice most day to day, and it is included as part of the project rather than treated as an add-on."
   - q: "Is refacing worth it, and when should I not reface?"
@@ -79,7 +79,7 @@ These three options solve different problems, and choosing the right one saves y
 
 Half the fun of refacing is choosing the new look. We offer shaker, slab, and raised-panel doors, which cover everything from clean modern to classic transitional styling. Shaker remains the most popular choice across Westchase, Carrollwood, and South Tampa because it suits almost any home, but slab doors give a sleek contemporary face and raised-panel doors lean more traditional.
 
-For materials, you can choose real wood, painted MDF, or thermofoil. Real wood is for homeowners who want natural grain or a rich stain. Painted MDF delivers a smooth, seamless painted face that resists the seasonal movement wood can show. Thermofoil is a durable, easy-to-clean option that holds up especially well in Florida humidity. Whatever door you choose, we match the box veneer or laminate so the perimeter, island, and end panels all read as one cohesive, new kitchen rather than a patchwork.
+For materials, you can choose real wood, painted MDF, or thermofoil. Real wood is for homeowners who want natural grain or a rich stain. Painted MDF delivers a smooth, even painted face that resists the seasonal movement wood can show. Thermofoil is a durable, easy-to-clean option that holds up especially well in Florida humidity. Whatever door you choose, we match the box veneer or laminate so the perimeter, island, and end panels all read as one cohesive, new kitchen rather than a patchwork.
 
 ### Soft-Close Hardware and the Details
 
@@ -87,7 +87,7 @@ Every reface we do includes new concealed soft-close hinges as standard, plus th
 
 ## Why Refacing Is the Smart Middle Path
 
-For a lot of Tampa Bay homeowners, refacing hits the sweet spot. You get a kitchen that looks brand new, you keep the layout you already like, and you avoid the expense and weeks of disruption that come with tearing out cabinets. Most projects wrap in two to five days with minimal mess, and because your countertops and plumbing stay put, life in the kitchen barely pauses.
+For a lot of Tampa Bay homeowners, refacing hits the sweet spot. You get a kitchen that looks brand new, you keep the layout you already like, and you avoid the expense and weeks of disruption that come with tearing out cabinets. Most projects wrap in two to five days with minimal mess, and because your countertops and plumbing stay put, life in the kitchen barely pauses. If you want to update the counters at the same time, new [quartz countertops in Tampa](/kitchen-countertops-tampa) pair well with a fresh door style.
 
 Refacing makes the most sense when your boxes are structurally sound. If your cabinets are water-damaged, sagging, or coming apart at the joints, no amount of new doors will fix the underlying problem, and we will steer you toward [new cabinets](/custom-kitchen-cabinets-tampa) and professional [installation](/kitchen-cabinet-installation-tampa) instead. Being straight with you about that is part of how we earn the work.
 

@@ -1,0 +1,57 @@
+---
+// Flagship $20,000 complete-kitchen offer block. Reused on the homepage and on
+// the cabinets / remodeling / countertops service pages.
+import { site, telHref } from '../lib/site';
+const offer = site.offer;
+interface Props { background?: 'navy' | 'light'; }
+const { background = 'navy' } = Astro.props as Props;
+const isNavy = background === 'navy';
+---
+<section class={isNavy ? 'py-16 sm:py-20 bg-[#1a2b4a]' : 'py-16 sm:py-20 bg-gray-50'}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class={`rounded-3xl overflow-hidden shadow-2xl ${isNavy ? 'bg-white' : 'bg-white border border-gray-100'}`}>
+      <div class="grid lg:grid-cols-5">
+        <!-- Price panel -->
+        <div class="lg:col-span-2 bg-[#1a2b4a] text-white p-8 sm:p-10 flex flex-col justify-center">
+          <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">The Tampa Kitchen Cabinets Offer</p>
+          <p class="text-gray-300 text-lg">{offer.priceQualifier}</p>
+          <p class="text-6xl sm:text-7xl font-extrabold text-white leading-none my-1">{offer.price}</p>
+          <p class="text-2xl font-bold text-[#c9a227] mb-4">a complete new kitchen</p>
+          <p class="text-gray-200 leading-relaxed">{offer.summary}</p>
+          <div class="mt-6 flex flex-col sm:flex-row lg:flex-col gap-3">
+            <a href="/contact" data-cta="promo_estimate" class="inline-flex items-center justify-center px-6 py-3.5 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get My Free Estimate</a>
+            <a href={telHref} data-cta="promo_call" class="inline-flex items-center justify-center px-6 py-3.5 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Call {site.phoneDisplay}</a>
+          </div>
+          <p class="text-gray-400 text-sm mt-4">Flexible monthly payments available through <a href="/financing" class="text-[#c9a227] hover:underline">Acorn Finance</a>.</p>
+        </div>
+
+        <!-- Transparency panel -->
+        <div class="lg:col-span-3 p-8 sm:p-10 grid sm:grid-cols-2 gap-8">
+          <div>
+            <h3 class="flex items-center gap-2 font-bold text-[#1a2b4a] mb-4">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              What's included
+            </h3>
+            <ul class="space-y-2">
+              {offer.includes.map((i) => (
+                <li class="flex items-start gap-2 text-gray-700 text-sm"><span class="text-green-600 mt-0.5">&#10003;</span>{i}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-2 font-bold text-[#1a2b4a] mb-4">
+              <svg class="w-5 h-5 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              What adds to your price
+            </h3>
+            <ul class="space-y-2">
+              {offer.increases.map((i) => (
+                <li class="flex items-start gap-2 text-gray-600 text-sm"><span class="text-[#c9a227] mt-0.5">+</span>{i}</li>
+              ))}
+            </ul>
+            <p class="text-xs text-gray-400 mt-5">No hidden surprises. The only exact number is the written estimate after we measure your kitchen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

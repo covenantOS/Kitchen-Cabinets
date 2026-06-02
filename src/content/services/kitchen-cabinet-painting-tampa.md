@@ -6,7 +6,7 @@ description: "Professional kitchen cabinet painting in Tampa. Factory-smooth spr
 breadcrumb: "Cabinet Painting"
 heroSubtitle: "A factory-smooth, brush-mark-free finish on the cabinets you already own, for a fraction of the cost of replacement."
 heroImage: "/services/painting-hero.webp"
-order: 1
+order: 6
 cardDescription: "Transform tired oak or dated cabinets with a durable, sprayed enamel finish in the color you want."
 cardImage: "/gallery/white-shaker-finished.webp"
 priceAnchor: "Most Tampa kitchens: $2,500 to $6,500"
@@ -69,7 +69,7 @@ If your cabinet boxes are solid but the finish looks dated, professional **cabin
 
 A surprising number of Tampa Bay homes built in the 1990s and 2000s came with quality solid-wood cabinetry, oak, maple, or cherry, that was built to last but finished in a color that now feels heavy and dated. The construction is still good. The finish is the problem. That is exactly the situation where **kitchen cabinet painting in Tampa** shines: you keep the well-built boxes and doors, and you change the look completely.
 
-Compared with tearing out and replacing cabinets, painting is faster, far less expensive, and far less disruptive. There is no demolition, no plumbing or electrical rework, and no weeks of living without a kitchen. For homeowners in Westchase, Carrollwood, and South Tampa who love their layout but not their cabinet color, refinishing is almost always the smarter spend. If you do want to change the door style itself, or your boxes are failing, that is when we point you toward [refacing](/kitchen-cabinet-refacing-tampa) or a full [kitchen remodel](/kitchen-remodeling-tampa) instead.
+Compared with tearing out and replacing cabinets, painting is faster, far less expensive, and far less disruptive. There is no demolition, no plumbing or electrical rework, and no weeks of living without a kitchen. For homeowners in Westchase, Carrollwood, and South Tampa who love their layout but not their cabinet color, refinishing is almost always the smarter spend. If you do want to change the door style itself, or your boxes are failing, that is when we point you toward [refacing](/kitchen-cabinet-refacing-tampa), new [kitchen cabinets](/custom-kitchen-cabinets-tampa), or a full [kitchen remodel](/kitchen-remodeling-tampa) instead.
 
 ### The Most Popular Transformations
 
@@ -81,7 +81,7 @@ The reason a painted finish either lasts a decade or fails in a year comes down 
 
 ### Clean, Degrease, and Sand
 
-Every door, drawer front, and box face is cleaned and degreased with TSP to strip away years of cooking oils and hand contact. Then we scuff-sand all the surfaces so the new coating has something to grip. We remove and carefully label every door and drawer front, and we mask off your countertops, backsplash, floors, and appliances before any product is sprayed.
+Every door, drawer front, and box face is cleaned and degreased with TSP to strip away years of cooking oils and hand contact. Then we scuff-sand all the surfaces so the new coating has something to grip. We remove and carefully label every door and drawer front, and we mask off your [countertops](/kitchen-countertops-tampa), backsplash, floors, and appliances before any product is sprayed.
 
 ### Bonding Primer and Grain Filling
 

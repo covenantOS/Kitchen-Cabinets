@@ -29,11 +29,12 @@ const BUSINESS_ID = `${U}/#business`;
 const ORG_ID = `${U}/#organization`;
 
 const SERVICES = [
-  { slug: 'kitchen-cabinet-painting-tampa', name: 'Kitchen Cabinet Painting', description: 'Professional kitchen cabinet painting in Tampa with factory-smooth sprayed finishes at a fraction of replacement cost.' },
+  { slug: 'custom-kitchen-cabinets-tampa', name: 'Kitchen Cabinets', description: 'Semi-custom kitchen cabinets in Tampa with quartz countertops, complete kitchens from $20,000, installed fast.' },
+  { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling', description: 'Full kitchen remodeling in Tampa: semi-custom cabinets, quartz countertops, backsplash, and flooring, managed by one team.' },
+  { slug: 'kitchen-countertops-tampa', name: 'Kitchen Countertops', description: 'Quartz kitchen countertops in Tampa, templated and installed in about a week, from about $7,500.' },
   { slug: 'kitchen-cabinet-refacing-tampa', name: 'Kitchen Cabinet Refacing', description: 'Cabinet refacing in Tampa: new doors, drawer fronts, and veneers over your existing cabinet boxes.' },
-  { slug: 'custom-kitchen-cabinets-tampa', name: 'Custom Kitchen Cabinets', description: 'Custom kitchen cabinets in Tampa designed and built to your space, style, and storage needs.' },
   { slug: 'kitchen-cabinet-installation-tampa', name: 'Kitchen Cabinet Installation', description: 'Precise kitchen cabinet installation in Tampa, including leveling, scribing, crown, and hardware.' },
-  { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling', description: 'Full kitchen remodeling in Tampa managed by cabinet specialists, from design through final walk-through.' },
+  { slug: 'kitchen-cabinet-painting-tampa', name: 'Kitchen Cabinet Painting', description: 'Kitchen cabinet painting in Tampa with sprayed finishes on your existing cabinets.' },
 ];
 
 const defaultAreas = ['Tampa', 'Westchase', 'Carrollwood', 'South Tampa', 'New Tampa', 'Citrus Park', 'Brandon', 'Riverview'];
@@ -79,10 +80,20 @@ if (props.schema === 'localBusiness') {
     currenciesAccepted: 'USD',
     slogan: site.tagline,
     knowsAbout: ['Kitchen Cabinet Painting', 'Cabinet Refacing', 'Custom Kitchen Cabinets', 'Cabinet Installation', 'Kitchen Remodeling'],
-    makesOffer: SERVICES.map((s) => ({
-      '@type': 'Offer',
-      itemOffered: { '@type': 'Service', name: s.name, url: `${U}/${s.slug}` },
-    })),
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: 'Complete new kitchen, starting at $20,000',
+        description: site.offer.summary,
+        url: `${U}/custom-kitchen-cabinets-tampa`,
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', price: '20000' },
+        itemOffered: { '@type': 'Service', name: 'Complete Kitchen Remodel' },
+      },
+      ...SERVICES.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s.name, url: `${U}/${s.slug}` },
+      })),
+    ],
     openingHoursSpecification: site.hours.map((h) => ({
       '@type': 'OpeningHoursSpecification', dayOfWeek: h.days, opens: h.opens, closes: h.closes,
     })),

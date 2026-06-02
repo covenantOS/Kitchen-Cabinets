@@ -6,7 +6,7 @@ import { site } from '../lib/site';
 const { standalone = true, formLocation = 'website' } = Astro.props as { standalone?: boolean; formLocation?: string };
 ---
 {standalone && (
-  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Request Your Free Estimate</h2><p class="text-lg text-gray-600">Tell us about your kitchen. We respond within one business day.</p></div>`} />
+  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Request Your Free Estimate</h2><p class="text-lg text-gray-600">Complete kitchens start at $20,000. Tell us about yours and we will get you an exact, no-pressure estimate within one business day.</p></div>`} />
 )}
 <form id="cf-form" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100" novalidate>
   <div class="mb-6">
@@ -55,25 +55,25 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
       <div>
         <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Project Type <span class="text-red-500">*</span></label>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="cf-project-types">
-          <button type="button" data-cf-ptype="Cabinet Painting" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
-            <span class="text-2xl block mb-1">&#127912;</span>
-            <span class="text-sm font-medium text-[#1a2b4a]">Cabinet Painting</span>
+          <button type="button" data-cf-ptype="Kitchen Remodel" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#127869;&#65039;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Kitchen Remodel</span>
+          </button>
+          <button type="button" data-cf-ptype="New Cabinets" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#128452;&#65039;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">New Cabinets</span>
+          </button>
+          <button type="button" data-cf-ptype="Countertops" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#129704;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Countertops</span>
           </button>
           <button type="button" data-cf-ptype="Cabinet Refacing" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
             <span class="text-2xl block mb-1">&#128296;</span>
             <span class="text-sm font-medium text-[#1a2b4a]">Cabinet Refacing</span>
           </button>
-          <button type="button" data-cf-ptype="Custom Cabinets" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
-            <span class="text-2xl block mb-1">&#128715;</span>
-            <span class="text-sm font-medium text-[#1a2b4a]">Custom Cabinets</span>
-          </button>
-          <button type="button" data-cf-ptype="Cabinet Installation" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
-            <span class="text-2xl block mb-1">&#128736;&#65039;</span>
-            <span class="text-sm font-medium text-[#1a2b4a]">Installation</span>
-          </button>
-          <button type="button" data-cf-ptype="Kitchen Remodel" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
-            <span class="text-2xl block mb-1">&#127869;&#65039;</span>
-            <span class="text-sm font-medium text-[#1a2b4a]">Kitchen Remodel</span>
+          <button type="button" data-cf-ptype="Cabinet Painting" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
+            <span class="text-2xl block mb-1">&#127912;</span>
+            <span class="text-sm font-medium text-[#1a2b4a]">Cabinet Painting</span>
           </button>
           <button type="button" data-cf-ptype="Not Sure Yet" class="cf-ptype p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center">
             <span class="text-2xl block mb-1">&#10024;</span>
@@ -85,6 +85,13 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
         <label for="cf-address" class="block text-sm font-semibold text-[#1a2b4a] mb-2">Property Address <span class="text-red-500">*</span></label>
         <input type="text" id="cf-address" name="address" autocomplete="street-address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c9a227] focus:border-transparent transition-all text-[#1a2b4a]" placeholder="123 Main St, Tampa, FL" />
         <ul id="cf-address-suggestions" class="absolute z-20 left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-1 hidden max-h-60 overflow-y-auto"></ul>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Are you the homeowner? <span class="text-red-500">*</span></label>
+        <div class="grid grid-cols-2 gap-2" id="cf-homeowner">
+          <button type="button" data-cf-homeowner="Yes" class="cf-homeowner p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">Yes, I own the home</button>
+          <button type="button" data-cf-homeowner="No" class="cf-homeowner p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">No</button>
+        </div>
       </div>
       <div class="flex gap-3">
         <button type="button" data-cf-back="1" class="flex-1 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all">Back</button>
@@ -111,6 +118,16 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
           <button type="button" data-cf-timeline="1 month" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">Within a month</span></button>
           <button type="button" data-cf-timeline="2-3 months" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">2-3 months out</span></button>
           <button type="button" data-cf-timeline="Just exploring" class="cf-timeline w-full p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-left"><span class="font-medium text-[#1a2b4a]">Just exploring options</span></button>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Budget range <span class="text-red-500">*</span></label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="cf-budgets">
+          <button type="button" data-cf-budget="Under $15K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">Under $15K</button>
+          <button type="button" data-cf-budget="$15K-$20K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$15K-$20K</button>
+          <button type="button" data-cf-budget="$20K-$30K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$20K-$30K</button>
+          <button type="button" data-cf-budget="$30K+" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$30K+</button>
+          <button type="button" data-cf-budget="Just exploring" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">Just exploring</button>
         </div>
       </div>
       <div>
@@ -141,7 +158,7 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
   (function () {
     var form = document.getElementById('cf-form');
     if (!form) return;
-    var data = { name:'', phone:'', email:'', address:'', projectType:'', timeline:'', message:'', smsOptIn:true };
+    var data = { name:'', phone:'', email:'', address:'', projectType:'', homeowner:'', budget:'', timeline:'', message:'', smsOptIn:true };
     var step = 1;
     var formStarted = false;
 
@@ -179,11 +196,20 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
 
     var addrI = document.getElementById('cf-address');
     var next2 = document.getElementById('cf-next-2');
-    function updateNext2() { next2.disabled = !(data.address && data.projectType); }
+    function updateNext2() { next2.disabled = !(data.address && data.projectType && data.homeowner); }
     document.querySelectorAll('.cf-ptype').forEach(function (btn) {
       btn.addEventListener('click', function () {
         data.projectType = btn.getAttribute('data-cf-ptype');
         document.querySelectorAll('.cf-ptype').forEach(function (b) { b.classList.remove('border-[#c9a227]', 'bg-[#c9a227]/10'); b.classList.add('border-gray-200'); });
+        btn.classList.remove('border-gray-200'); btn.classList.add('border-[#c9a227]', 'bg-[#c9a227]/10');
+        updateNext2();
+      });
+    });
+
+    document.querySelectorAll('.cf-homeowner').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        data.homeowner = btn.getAttribute('data-cf-homeowner');
+        document.querySelectorAll('.cf-homeowner').forEach(function (b) { b.classList.remove('border-[#c9a227]', 'bg-[#c9a227]/10'); b.classList.add('border-gray-200'); });
         btn.classList.remove('border-gray-200'); btn.classList.add('border-[#c9a227]', 'bg-[#c9a227]/10');
         updateNext2();
       });
@@ -223,7 +249,15 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
     var msgI = document.getElementById('cf-message');
     var smsI = document.getElementById('cf-sms');
     var errorEl = document.getElementById('cf-error');
-    function updateSubmit() { submitBtn.disabled = !data.timeline; }
+    function updateSubmit() { submitBtn.disabled = !(data.timeline && data.budget); }
+    document.querySelectorAll('.cf-budget').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        data.budget = btn.getAttribute('data-cf-budget');
+        document.querySelectorAll('.cf-budget').forEach(function (b) { b.classList.remove('border-[#c9a227]', 'bg-[#c9a227]/10'); b.classList.add('border-gray-200'); });
+        btn.classList.remove('border-gray-200'); btn.classList.add('border-[#c9a227]', 'bg-[#c9a227]/10');
+        updateSubmit();
+      });
+    });
     document.querySelectorAll('.cf-timeline').forEach(function (btn) {
       btn.addEventListener('click', function () {
         data.timeline = btn.getAttribute('data-cf-timeline');
@@ -241,7 +275,7 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!data.timeline) return;
+      if (!data.timeline || !data.budget) return;
       submitBtn.disabled = true;
       var orig = submitBtn.innerHTML;
       submitBtn.innerHTML = '<svg class="animate-spin w-5 h-5 inline-block mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...';

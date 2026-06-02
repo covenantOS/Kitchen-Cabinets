@@ -7,6 +7,8 @@ import FloatingCallBadge from '../components/FloatingCallBadge.astro';
 import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 import AnalyticsListeners from '../components/AnalyticsListeners.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
+import PromoBlock from '../components/PromoBlock.astro';
+import QuartzEducation from '../components/QuartzEducation.astro';
 import { site, telHref } from '../lib/site';
 
 interface ServiceData {
@@ -22,12 +24,15 @@ interface Props { service: ServiceData; slug: string; }
 const { service, slug } = Astro.props as Props;
 
 const SERVICES = [
-  { slug: 'kitchen-cabinet-painting-tampa', name: 'Cabinet Painting' },
-  { slug: 'kitchen-cabinet-refacing-tampa', name: 'Cabinet Refacing' },
-  { slug: 'custom-kitchen-cabinets-tampa', name: 'Custom Cabinets' },
-  { slug: 'kitchen-cabinet-installation-tampa', name: 'Cabinet Installation' },
+  { slug: 'custom-kitchen-cabinets-tampa', name: 'Kitchen Cabinets' },
   { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling' },
+  { slug: 'kitchen-countertops-tampa', name: 'Countertops' },
+  { slug: 'kitchen-cabinet-refacing-tampa', name: 'Cabinet Refacing' },
+  { slug: 'kitchen-cabinet-installation-tampa', name: 'Cabinet Installation' },
+  { slug: 'kitchen-cabinet-painting-tampa', name: 'Cabinet Painting' },
 ];
+const PROMO_SLUGS = ['custom-kitchen-cabinets-tampa', 'kitchen-remodeling-tampa', 'kitchen-countertops-tampa'];
+const QUARTZ_SLUGS = ['kitchen-countertops-tampa', 'kitchen-remodeling-tampa'];
 const AREAS = [
   { slug: 'westchase', name: 'Westchase' }, { slug: 'carrollwood', name: 'Carrollwood' },
   { slug: 'south-tampa', name: 'South Tampa' }, { slug: 'new-tampa', name: 'New Tampa' },
@@ -85,6 +90,9 @@ const extraSchema = [
         <span class="flex items-center gap-2"><svg class="w-4 h-4 text-[#c9a227]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>Backed by {site.sisterName}</span>
       </div>
     </section>
+
+    {PROMO_SLUGS.includes(slug) && <PromoBlock background="light" />}
+    {QUARTZ_SLUGS.includes(slug) && <QuartzEducation background="white" />}
 
     <!-- Content + Sidebar -->
     <section class="py-16">

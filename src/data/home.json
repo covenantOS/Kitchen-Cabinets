@@ -1,12 +1,12 @@
 {
-  "heroEyebrow": "Tampa's Kitchen Cabinet Specialists",
-  "heroH1": "Tampa Kitchen Cabinets",
-  "heroPromise": "From a fresh cabinet finish to a full custom remodel, we build and finish kitchens Tampa Bay loves, with the same team and standards as Westchase Painting Company.",
+  "heroEyebrow": "Tampa Kitchen Cabinets",
+  "heroH1": "A complete new kitchen, starting at $20,000",
+  "heroPromise": "New semi-custom cabinets, quartz countertops, a photorealistic 3D design of your actual kitchen, and professional installation. Most kitchens are done in about a week.",
   "stats": [
+    { "value": "$20,000", "label": "Complete kitchens, starting price" },
+    { "value": "~1 week", "label": "Typical turnaround" },
     { "value": "5.0★", "label": "Backed by Westchase Painting" },
-    { "value": "25+ yrs", "label": "Finish craftsmanship" },
-    { "value": "500+", "label": "Tampa Bay projects" },
-    { "value": "100%", "label": "Satisfaction focus" }
+    { "value": "3D", "label": "Photorealistic design in a day" }
   ],
   "beforeAfter": [
     { "before": "/gallery/ba-island-before.webp", "after": "/gallery/ba-island-after.webp", "beforeAlt": "White shaker kitchen during installation in a Tampa home, before countertops", "afterAlt": "Finished white shaker island kitchen in Tampa", "caption": "Custom island kitchen: during installation to finished" },

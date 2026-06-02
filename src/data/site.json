@@ -29,6 +29,28 @@
   "craftYears": "25+",
   "parentFoundedYear": 2020,
   "formSource": "tampa-kitchen-cabinets",
+  "offer": {
+    "headline": "A complete new kitchen, starting at $20,000",
+    "price": "$20,000",
+    "priceQualifier": "Starting at",
+    "summary": "Up to 17 semi-custom cabinets with quartz countertops, including hardware, crown molding, all finishes, and professional installation.",
+    "includes": [
+      "Up to 17 semi-custom cabinets",
+      "Quartz countertops",
+      "Cabinet hardware",
+      "Crown molding",
+      "All finishes",
+      "Professional installation",
+      "Demolition"
+    ],
+    "increases": [
+      "Kitchens larger than 17 cabinets",
+      "Solid-wood or fully custom cabinetry",
+      "Adding a backsplash (around $1,500)",
+      "Adding flooring (around $3,750)",
+      "Wall painting"
+    ]
+  },
   "acornFinanceUrl": "https://www.acornfinance.com/pre-qualify/?d=BLYXZ",
   "ga4Id": "",
   "gtmId": ""

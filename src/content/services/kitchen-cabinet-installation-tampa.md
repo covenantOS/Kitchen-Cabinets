@@ -6,7 +6,7 @@ description: "Professional kitchen cabinet installation in Tampa. Precise leveli
 breadcrumb: "Cabinet Installation"
 heroSubtitle: "Level, plumb, and built to last, your new cabinetry installed right the first time so your countertops and kitchen come together perfectly."
 heroImage: "/services/installation-hero.webp"
-order: 4
+order: 5
 cardDescription: "Precise, professional installation of stock, semi-custom, or custom cabinetry, leveled and secured to last."
 cardImage: "/services/install-white-run.webp"
 priceAnchor: "Typical Tampa cabinet installation: $90 to $400 per linear foot installed (varies by cabinetry)"
@@ -72,7 +72,7 @@ The cabinets are the backbone of a kitchen, and how they are installed determine
 
 ## Why Professional Cabinet Installation in Tampa Matters
 
-It is tempting to think of cabinet installation as simply hanging boxes on a wall, but a good install is precision work. Every base and upper has to be leveled and plumb, the runs have to join seamlessly, and the whole assembly has to be scribed to walls that are almost never perfectly straight. Get any of that wrong and the consequences show up everywhere: countertops that do not sit flat, doors that will not align, and gaps that make new cabinetry look like a weekend project.
+Cabinet installation looks like hanging boxes on a wall, but a good install is precision work. Every base and upper has to be leveled and plumb, the runs have to join tight and flush, and the whole assembly has to be scribed to walls that are almost never perfectly straight. Get any of that wrong and the consequences show up everywhere: countertops that do not sit flat, doors that will not align, and gaps that make new cabinetry look like a weekend project.
 
 Quality **kitchen cabinet installation in Tampa** is what turns a stack of cabinet boxes into a finished, built-in kitchen. Because countertops are templated to the installed cabinets, the accuracy of the install directly controls how well your counters, sink, and range fit later. This is the stage where careful measurement and patient leveling pay off for the entire life of the kitchen.
 
@@ -102,7 +102,7 @@ Florida homes settle, and walls and floors drift out of plumb and level over the
 
 ## Coordinating With Countertops and Trades
 
-Cabinet installation is the hinge point of a kitchen project. Countertops cannot be templated until the cabinets are set and level, and the plumber and electrician need the boxes in place to finish their connections. We sequence our work to keep the whole project moving and can coordinate directly with your countertop fabricator and other trades. For a larger renovation, our [kitchen remodeling service](/kitchen-remodeling-tampa) can manage the entire sequence from demolition to final trim.
+Cabinet installation is the hinge point of a kitchen project. [Quartz and other countertops](/kitchen-countertops-tampa) cannot be templated until the cabinets are set and level, and the plumber and electrician need the boxes in place to finish their connections. We sequence our work to keep the whole project moving and can coordinate directly with your countertop fabricator and other trades. For a larger renovation, our [kitchen remodeling service](/kitchen-remodeling-tampa) can manage the entire sequence from demolition to final trim.
 
 ## Honest Tampa Installation Pricing
 
