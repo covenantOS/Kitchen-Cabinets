@@ -6,7 +6,7 @@ import { site } from '../lib/site';
 const { standalone = true, formLocation = 'website' } = Astro.props as { standalone?: boolean; formLocation?: string };
 ---
 {standalone && (
-  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Book Your Free Design Consultation</h2><p class="text-lg text-gray-600">Tell us about your kitchen vision. Share some details and we will reach out to schedule your free consultation.</p></div>`} />
+  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Book Your Free Design Consultation</h2><p class="text-lg text-gray-600">Tell us about your kitchen. Share some details and we will reach out to schedule your free consultation.</p></div>`} />
 )}
 <form id="cf-form" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100" novalidate>
   <div class="mb-6">

@@ -71,7 +71,7 @@ A surprising number of Tampa Bay homes built in the 1990s and 2000s came with qu
 
 Compared with tearing out and replacing cabinets, painting is faster, far less expensive, and far less disruptive. There is no demolition, no plumbing or electrical rework, and no weeks of living without a kitchen. For homeowners in Westchase, Carrollwood, and South Tampa who love their layout but not their cabinet color, refinishing is almost always the smarter spend. If you do want to change the door style itself, or your boxes are failing, that is when we point you toward [refacing](/kitchen-cabinet-refacing-tampa), new [kitchen cabinets](/custom-kitchen-cabinets-tampa), or a full [kitchen remodel](/kitchen-remodeling-tampa) instead.
 
-### The Most Popular Transformations
+### The Most Popular Remodels
 
 The single most requested project we do is taking honey oak to a crisp white or soft greige. Two-tone kitchens are also popular right now, with painted perimeter cabinets and a contrasting island, or warm wood accents alongside a painted run. Whatever direction you choose, a sprayed solid color reads as clean and current, and it instantly modernizes a space without changing a single cabinet box.
 

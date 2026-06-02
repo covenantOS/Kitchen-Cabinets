@@ -58,7 +58,7 @@ Not every South Tampa kitchen needs a full custom build. Newer homes sometimes o
 
 ## Craftsmanship Suited to South Tampa
 
-Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and we bring serious finish and installation craftsmanship to the kind of detail-driven work South Tampa homes call for. Whether the goal is honoring the character of a Hyde Park bungalow or delivering the clean lines of a modern Palma Ceia remodel, we treat the cabinetry as the centerpiece it is.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home remodeling experience, and we bring serious finish and installation craftsmanship to the kind of detail-driven work South Tampa homes call for. Whether the goal is honoring the character of a Hyde Park bungalow or delivering the clean lines of a modern Palma Ceia remodel, we treat the cabinetry as the centerpiece it is.
 
 We are licensed and insured, our estimates are always free, and we are happy to talk honestly about which approach, custom, reface, or paint, makes sense for your home and budget. You can see every neighborhood we serve on our [service areas](/service-areas) page.
 

@@ -29,7 +29,7 @@ const BUSINESS_ID = `${U}/#business`;
 const ORG_ID = `${U}/#organization`;
 
 const SERVICES = [
-  { slug: 'custom-kitchen-cabinets-tampa', name: 'Kitchen Cabinets', description: 'Premium kitchen cabinets in Tampa with quartz countertops, complete kitchens from $19,995, installed fast.' },
+  { slug: 'custom-kitchen-cabinets-tampa', name: 'Kitchen Cabinets', description: 'Semi-custom kitchen cabinets in Tampa with quartz countertops, complete kitchens from $19,995, installed fast.' },
   { slug: 'kitchen-remodeling-tampa', name: 'Kitchen Remodeling', description: 'Full kitchen remodeling in Tampa: semi-custom cabinets, quartz countertops, backsplash, and flooring, managed by one team.' },
   { slug: 'kitchen-countertops-tampa', name: 'Kitchen Countertops', description: 'Quartz kitchen countertops in Tampa, templated and installed in about a week, from about $7,500.' },
   { slug: 'kitchen-cabinet-refacing-tampa', name: 'Kitchen Cabinet Refacing', description: 'Cabinet refacing in Tampa: new doors, drawer fronts, and veneers over your existing cabinet boxes.' },
@@ -46,8 +46,8 @@ let json: Record<string, unknown> = {};
 if (props.schema === 'localBusiness') {
   const areaServed = props.areaOverride ? [cityNode(props.areaOverride)] : defaultAreas.map(cityNode);
   const description = props.areaOverride
-    ? `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling in ${props.areaOverride}, FL and the greater Tampa Bay area. Backed by 25 years of Tampa Bay home transformation experience. Licensed, insured, free estimates.`
-    : `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling across Tampa and the surrounding Tampa Bay area. Backed by 25 years of Tampa Bay home transformation experience. Licensed, insured, free estimates.`;
+    ? `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling in ${props.areaOverride}, FL and the greater Tampa Bay area. Backed by 25 years of Tampa Bay home remodeling experience. Licensed, insured, free estimates.`
+    : `${site.brandName} provides kitchen cabinet painting, refacing, custom cabinets, installation, and kitchen remodeling across Tampa and the surrounding Tampa Bay area. Backed by 25 years of Tampa Bay home remodeling experience. Licensed, insured, free estimates.`;
 
   json = {
     '@context': 'https://schema.org',

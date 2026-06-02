@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PromoBlock from '../components/PromoBlock.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import FloatingCallBadge from '../components/FloatingCallBadge.astro';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import AnalyticsListeners from '../components/AnalyticsListeners.astro';
+import { site, telHref } from '../lib/site';
+
+const tiers = [
+  { service: 'Cabinet painting', price: 'From $3,500', note: 'Refinish your existing boxes and doors' },
+  { service: 'Cabinet refacing', price: '$4,000 to $10,000', note: 'New doors and fronts over your existing boxes' },
+  { service: 'Complete kitchen (cabinets + quartz)', price: 'From $19,995', note: 'Up to 17 cabinets, quartz, hardware, crown, install', highlight: true },
+  { service: 'Backsplash (add-on)', price: 'Around $1,500', note: 'Standard kitchen, after material selection' },
+  { service: 'Flooring (add-on)', price: 'Around $3,750', note: 'Typical 200 square foot kitchen' },
+  { service: 'Solid-wood / fully custom upgrade', price: '2 to 3x', note: 'For homeowners who specifically want built-to-order' },
+];
+const extraSchema = [
+  { schema: 'localBusiness' },
+  { schema: 'breadcrumb', breadcrumbItems: [ { name: 'Home', url: `${site.url}/` }, { name: 'Pricing', url: `${site.url}/pricing` } ] },
+];
+---
+<BaseLayout
+  title="Kitchen Remodel Cost in Tampa | Transparent Pricing From $19,995"
+  description="What does a kitchen remodel cost in Tampa? Real, published pricing. Complete kitchens from $19,995 with quartz included, or $250/month. No mystery quotes."
+  extraSchema={extraSchema as any}
+>
+  <FloatingCallBadge />
+  <main class="bg-white">
+    <StickyHeader />
+    <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Pricing</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Kitchen remodel cost in Tampa</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Most Tampa contractors will not show you a number until they are standing in your kitchen. We publish ours. Here is what your project actually costs.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get My Exact Price</a>
+          <a href={telHref} class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-[#1a2b4a] transition-all">Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="bg-[#1a2b4a] text-white">
+                <th class="px-5 py-4 font-semibold">Service</th>
+                <th class="px-5 py-4 font-semibold">Starting price</th>
+                <th class="px-5 py-4 font-semibold hidden sm:table-cell">What it covers</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {tiers.map((t) => (
+                <tr class={t.highlight ? 'bg-[#c9a227]/10' : 'bg-white'}>
+                  <td class="px-5 py-4 font-semibold text-[#1a2b4a]">{t.service}</td>
+                  <td class="px-5 py-4 font-bold text-[#c9a227] whitespace-nowrap">{t.price}</td>
+                  <td class="px-5 py-4 text-gray-600 text-sm hidden sm:table-cell">{t.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-500 text-sm mt-4">Demolition of your old kitchen is included in every complete-kitchen project. These are real starting prices and typical ranges. The only exact number is the written estimate after we measure, and the price we quote is the price you pay.</p>
+        <div class="mt-8 rounded-xl bg-gray-50 border border-gray-200 p-6">
+          <h2 class="text-xl font-bold text-[#1a2b4a] mb-2">How we compare</h2>
+          <p class="text-gray-600">Most Tampa contractors quote $25,000 to $45,000 for a basic kitchen refresh, and that usually does not include countertops. Full custom runs $75,000 and up over three to six months. Our complete kitchen, with new cabinets and quartz countertops, starts at $19,995 and installs in about 5 days.</p>
+        </div>
+      </div>
+    </section>
+
+    <PromoBlock background="light" />
+
+    <section class="py-12 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-lg text-gray-700">Prefer to think in monthly terms? Complete kitchens start around <span class="font-bold text-[#1a2b4a]">$250/month</span> with financing through Acorn Finance.</p>
+        <a href={site.acornFinanceUrl} target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-4 mt-5 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Check Your Rate, No Credit Impact</a>
+      </div>
+    </section>
+
+    <FAQSection background="gray" />
+    <CTASection title="Know your price before we measure" description="Tell us about your kitchen and we will get you a real number, not a sales pitch." />
+    <ContactForm formLocation="pricing" />
+    <Footer />
+  </main>
+  <ExitIntentPopup />
+  <AnalyticsListeners />
+</BaseLayout>

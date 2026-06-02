@@ -1,4 +1,13 @@
 # Path safety nets (host canonicalization www -> apex is set via a Cloudflare Redirect Rule).
-/our-process            /process                  301
-/areas/*                /service-areas/:splat     301
-/services                /                         301
+/our-process              /process                            301
+/areas/*                  /service-areas/:splat               301
+/areas-served/*           /service-areas/:splat               301
+/services                 /                                   301
+# Clean service URL variants -> existing keyword-exact pages
+/kitchen-cabinets         /custom-kitchen-cabinets-tampa      301
+/cabinet-refacing         /kitchen-cabinet-refacing-tampa     301
+/kitchen-remodeling       /kitchen-remodeling-tampa           301
+/countertops              /kitchen-countertops-tampa          301
+/cabinet-painting         /kitchen-cabinet-painting-tampa     301
+/cabinet-installation     /kitchen-cabinet-installation-tampa 301
+/semi-custom-cabinets-tampa /custom-kitchen-cabinets-tampa    301

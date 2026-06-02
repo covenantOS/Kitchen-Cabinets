@@ -152,3 +152,20 @@ Messaging/positioning refinement on the same structure (no new page architecture
 - **Voice:** em dashes and the banned word/phrase list removed from all user-facing copy.
 
 **New Phase-2 placeholders:** the 8 cabinet **sample images** are stock/representative door renders (swap for your real finishes when ready); the **5-day / 3D-design / 2020 Design / pre-visit-video** claims should match your actual operations before launch; gallery captions cover style and color only (add real cost/timeline/neighborhood when you have it); financing monthly figures are illustrative (84-month term) and should be confirmed with Acorn.
+
+---
+
+## 10. Changelog — Phase 3: research-backed conversion + SEO
+
+Reverses the Phase-2 "desire-first" hero in favor of a quantified, keyword-led approach (per your competitor/keyword research and the audit of the live site).
+
+- **Hero rewritten.** H1 is now **"New Kitchen Cabinets + Quartz Countertops, Installed in 5 Days"** with a bold **"Complete kitchens from $19,995, or $250/month"** line and a "5 days, not 5 months" subhead. CTA is "See My Kitchen in 3D, Free Consultation." Killed "Your kitchen, transformed."
+- **Homepage title tag:** "Kitchen Cabinets Tampa | 5-Day Install, Quartz From $19,995" (dropped "Premium Kitchen Transformations," which targeted no query).
+- **Information architecture:** the comparison table and the "price quoted is the price paid" guarantee now sit **immediately under the hero** (audit called them the best converting elements, previously buried). Stat bar leads with 5 days / $19,995 / 3D / $250-mo.
+- **Specificity pass:** "why us" cards rebuilt to plywood-vs-particle-board (dovetail, soft-close, 20-30 yr), "5 days not 5 months" (vs 6-12 week standard), "see it in 3D first" (61% regret a layout), and "the price quoted is the price paid." PromoBlock heading is now "17 cabinets, quartz countertops, and installation."
+- **Banned-word scrub** sitewide: removed every "transformed / transformation(s) / premium (vague) / vision / curated / elevate / reimagine / bespoke" from copy (one authentic customer review keeps the word "premium").
+- **`/pricing` page created** (was a 404), targeting "kitchen remodel cost tampa": published tiers (painting from $3,500, refacing $4k-$10k, complete kitchen from $19,995, backsplash ~$1,500, flooring ~$3,750, custom upgrade 2-3x), the $19,995 breakdown, a competitor anchor, and financing. Linked in nav, footer, and sitemap.
+- **URL redirects added** so the research doc's suggested URLs resolve to the existing keyword-exact pages: `/kitchen-cabinets`, `/cabinet-refacing`, `/kitchen-remodeling`, `/countertops`, `/cabinet-painting`, `/cabinet-installation`, `/semi-custom-cabinets-tampa`, `/areas-served/*`, and `/services` (no duplicate `/services` page exists).
+- **Real cabinet sample photos** (the 8 you provided) replace the prior renders in "Explore our selections."
+
+**Still outstanding (need real data, not safe to fabricate):** a displayed **GC license number**; a **named warranty** with terms; a real **project/review count** and a **clickable, verified Google Business Profile** link (the "5.0" claim was removed from the trust bar rather than left unverified); and the P2 SEO content (blog posts like "Kitchen Remodel Cost Tampa," plus Clearwater / St. Petersburg / Hyde Park area pages). Send those and I will wire them in. The 5-day / 3D / 2020 Design / pre-visit-video claims are stated as fact, so confirm they match operations.

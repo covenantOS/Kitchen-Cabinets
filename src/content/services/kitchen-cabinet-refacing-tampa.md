@@ -67,7 +67,7 @@ If your kitchen layout works and your cabinet boxes are solid, but the door styl
 
 ## What Cabinet Refacing in Tampa Actually Involves
 
-Refacing is often misunderstood, so it helps to be precise about what it is. **Cabinet refacing in Tampa** means we keep your cabinet boxes and your kitchen layout exactly as they are, then change everything you can see. The old doors and drawer fronts come off and are replaced with new ones in the style, color, and material you select. At the same time, we apply a matching wood veneer or laminate to the visible faces of the boxes, the exposed end panels, and any sides that show. New soft-close hinges and hardware finish the transformation.
+Refacing is often misunderstood, so it helps to be precise about what it is. **Cabinet refacing in Tampa** means we keep your cabinet boxes and your kitchen layout exactly as they are, then change everything you can see. The old doors and drawer fronts come off and are replaced with new ones in the style, color, and material you select. At the same time, we apply a matching wood veneer or laminate to the visible faces of the boxes, the exposed end panels, and any sides that show. New soft-close hinges and hardware finish the remodel.
 
 The result is a kitchen that looks completely new from the outside while reusing the structurally sound cabinetry you already paid for. Because there is no demolition and no plumbing or electrical rework, refacing is dramatically cleaner and faster than ripping cabinets out and starting over.
 
