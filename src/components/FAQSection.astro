@@ -1,0 +1,66 @@
+---
+interface Props { heading?: string; background?: 'white' | 'gray'; }
+const { heading = 'Frequently asked questions', background = 'gray' } = Astro.props as Props;
+const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+
+const faqs = [
+  {
+    q: 'Why quartz instead of granite?',
+    a: 'Quartz has become the preferred surface in luxury home construction, and for good reason. It is non-porous, so it never stains and never needs sealing, it is incredibly durable, and it delivers a perfectly consistent look across your entire kitchen. Granite was the gold standard ten years ago, but quartz outperforms it in every category that matters for daily life. If you have your heart set on granite, we are happy to accommodate.',
+  },
+  {
+    q: 'What does semi-custom mean? Is it as good as fully custom?',
+    a: 'Our cabinetry comes from the same premium manufacturers that supply luxury home builders nationwide. You choose from a curated collection of door styles, colors, and configurations, then we design your kitchen in 3D for a precision fit. The result looks and feels identical to fully custom cabinetry, without the 3x price tag or 3 to 6 month wait. Many of our clients tell us they cannot tell the difference, because in daily use there is not one.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'Most kitchen installations are completed in about 5 days. This is not because we rush. It is because we have perfected our process. Every cabinet is pre-measured, pre-fitted, and ready before our team arrives. Countertop templating and fabrication follow immediately after cabinet installation. From your first consultation to cooking in your new kitchen, the typical timeline is 2 to 4 weeks.',
+  },
+  {
+    q: 'Do you offer financing?',
+    a: 'Yes. We partner with Acorn Finance to offer flexible monthly payment plans. Most homeowners are approved in minutes with no impact to their credit score. A complete kitchen transformation can be as accessible as $250 per month.',
+    aHtml: 'Yes. We partner with Acorn Finance to offer flexible monthly payment plans. Most homeowners are approved in minutes with no impact to their credit score. A complete kitchen transformation can be as accessible as $250 per month. <a href="/financing" class="text-[#c9a227] hover:underline font-semibold">Check your rate</a>.',
+  },
+  {
+    q: 'What if my kitchen has more than 17 cabinets?',
+    a: 'Most Tampa kitchens fit comfortably within our 17-cabinet package. For larger kitchens, each additional cabinet is approximately $1,000. You will know your exact count before any work begins, because we measure everything and show you the complete design in 3D, so there are never any surprises.',
+  },
+  {
+    q: 'What about backsplash and flooring?',
+    a: 'Our core package focuses on what transforms your kitchen the most: cabinetry and countertops. Backsplash (around $1,500) and flooring (around $3,750) are available as add-ons, and many clients include them for a complete transformation. Your 3D design shows you exactly what each option looks like in your space.',
+  },
+  {
+    q: 'How is this different from Home Depot or IKEA kitchens?',
+    a: 'Big box stores sell kitchen parts: particle board cabinets, no countertops, no design help, and you are on your own for installation. We deliver a complete transformation: premium plywood-construction cabinetry, quartz countertops, professional 3D design, and expert installation in 5 days. For a few thousand more than a do-it-yourself big box project, which still requires hiring an installer and buying countertops separately, you get everything done professionally and keep your weekends.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<section class={`py-16 sm:py-20 ${bg}`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">FAQ</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">{heading}</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="group border border-gray-100 rounded-xl overflow-hidden bg-white">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer p-5 font-semibold text-[#1a2b4a] hover:bg-gray-50">{f.q}<svg class="w-5 h-5 text-[#c9a227] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          {f.aHtml
+            ? <p class="px-5 pb-5 text-gray-600 leading-relaxed" set:html={f.aHtml} />
+            : <p class="px-5 pb-5 text-gray-600 leading-relaxed">{f.a}</p>}
+        </details>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>

@@ -6,7 +6,7 @@ import { site } from '../lib/site';
 const { standalone = true, formLocation = 'website' } = Astro.props as { standalone?: boolean; formLocation?: string };
 ---
 {standalone && (
-  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Request Your Free Estimate</h2><p class="text-lg text-gray-600">Complete kitchens start at $20,000. Tell us about yours and we will get you an exact, no-pressure estimate within one business day.</p></div>`} />
+  <Fragment set:html={`<section class="py-16 sm:py-20 bg-white" id="contact"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a2b4a] mb-4">Book Your Free Design Consultation</h2><p class="text-lg text-gray-600">Tell us about your kitchen vision. Share some details and we will reach out to schedule your free consultation.</p></div>`} />
 )}
 <form id="cf-form" class="bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100" novalidate>
   <div class="mb-6">
@@ -122,12 +122,11 @@ const { standalone = true, formLocation = 'website' } = Astro.props as { standal
       </div>
       <div>
         <label class="block text-sm font-semibold text-[#1a2b4a] mb-3">Budget range <span class="text-red-500">*</span></label>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="cf-budgets">
-          <button type="button" data-cf-budget="Under $15K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">Under $15K</button>
-          <button type="button" data-cf-budget="$15K-$20K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$15K-$20K</button>
-          <button type="button" data-cf-budget="$20K-$30K" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$20K-$30K</button>
-          <button type="button" data-cf-budget="$30K+" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$30K+</button>
-          <button type="button" data-cf-budget="Just exploring" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">Just exploring</button>
+        <div class="grid grid-cols-2 gap-2" id="cf-budgets">
+          <button type="button" data-cf-budget="$15,000-$20,000" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$15,000 - $20,000</button>
+          <button type="button" data-cf-budget="$20,000-$30,000" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$20,000 - $30,000</button>
+          <button type="button" data-cf-budget="$30,000-$40,000" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$30,000 - $40,000</button>
+          <button type="button" data-cf-budget="$40,000+" class="cf-budget p-3 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all text-center text-sm font-medium text-[#1a2b4a]">$40,000+</button>
         </div>
       </div>
       <div>

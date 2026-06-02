@@ -1,12 +1,12 @@
 {
   "heroEyebrow": "Tampa Kitchen Cabinets",
-  "heroH1": "A complete new kitchen, starting at $20,000",
-  "heroPromise": "New semi-custom cabinets, quartz countertops, a photorealistic 3D design of your actual kitchen, and professional installation. Most kitchens are done in about a week.",
+  "heroH1": "Your kitchen, transformed.",
+  "heroPromise": "Premium cabinetry. Quartz countertops. Installed in 5 days. Complete kitchen transformations starting at $19,995, or from $250/month with financing.",
   "stats": [
-    { "value": "$20,000", "label": "Complete kitchens, starting price" },
-    { "value": "~1 week", "label": "Typical turnaround" },
-    { "value": "5.0★", "label": "Backed by Westchase Painting" },
-    { "value": "3D", "label": "Photorealistic design in a day" }
+    { "value": "5 days", "label": "Typical install" },
+    { "value": "3D", "label": "See it before we build it" },
+    { "value": "Quartz", "label": "Premium countertops, standard" },
+    { "value": "$250/mo", "label": "Flexible financing" }
   ],
   "beforeAfter": [
     { "before": "/gallery/ba-island-before.webp", "after": "/gallery/ba-island-after.webp", "beforeAlt": "White shaker kitchen during installation in a Tampa home, before countertops", "afterAlt": "Finished white shaker island kitchen in Tampa", "caption": "Custom island kitchen: during installation to finished" },

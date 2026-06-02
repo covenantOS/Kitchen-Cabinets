@@ -36,7 +36,6 @@ const sm = (src: string) => src.replace(/\.webp$/, '-sm.webp');
             <div class="p-6 flex flex-col flex-1">
               <h3 class="text-xl font-bold text-[#1a2b4a] mb-2 group-hover:text-[#c9a227] transition-colors">{s.data.shortName}</h3>
               <p class="text-gray-600 text-sm leading-relaxed flex-1">{s.data.cardDescription}</p>
-              {s.data.priceAnchor && <p class="text-sm font-semibold text-[#1a2b4a] mt-3">{s.data.priceAnchor}</p>}
               <span class="inline-flex items-center gap-1 text-[#c9a227] font-semibold text-sm mt-4">
                 Learn more
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>

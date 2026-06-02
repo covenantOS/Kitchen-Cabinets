@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "src": "/samples/shaker-white.webp", "alt": "Classic white shaker cabinet door sample", "caption": "Classic White Shaker. Our most popular style. Clean lines, timeless appeal, pairs beautifully with any quartz pattern." },
+    { "src": "/samples/shaker-gray.webp", "alt": "Modern gray shaker cabinet door sample", "caption": "Modern Gray Shaker. Sophisticated and contemporary. A designer favorite for kitchens that make a statement." },
+    { "src": "/samples/shaker-navy.webp", "alt": "Navy blue shaker cabinet door sample", "caption": "Navy Blue Shaker. Bold, refined, and on-trend. Stunning with brass or gold hardware accents." },
+    { "src": "/samples/natural-wood.webp", "alt": "Natural wood grain cabinet door sample", "caption": "Natural Wood Grain. Warm, organic beauty. Brings texture and character to modern and transitional kitchens." },
+    { "src": "/samples/espresso.webp", "alt": "Espresso dark wood cabinet door sample", "caption": "Espresso Dark Wood. Rich, dramatic depth. Perfect for creating contrast in larger, well-lit kitchens." },
+    { "src": "/samples/hardware.webp", "alt": "Premium cabinet hardware selection", "caption": "Premium Hardware. Soft-close hinges and drawer slides standard. Choose from brushed nickel, matte black, brass, and more." },
+    { "src": "/samples/door-styles.webp", "alt": "Cabinet door style comparison", "caption": "Door Style Options. Shaker, raised panel, flat panel, and more. See them side by side during your in-home consultation." },
+    { "src": "/samples/interiors.webp", "alt": "Plywood cabinet interior construction sample", "caption": "Interior Construction. Plywood box construction with finished interiors. Quality you can see every time you open a cabinet." }
+  ]
+}

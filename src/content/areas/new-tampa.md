@@ -55,7 +55,7 @@ For homeowners ready to do more, [custom kitchen cabinets](/custom-kitchen-cabin
 
 ## Why New Tampa Homeowners Choose Us
 
-Tampa Kitchen Cabinets is a division of Westchase Painting Company, and we have spent years working on homes across the Tampa Bay area. We understand the housing stock in master-planned communities like New Tampa, where the kitchens share a common era and respond well to the same proven updates. Our crews bring careful finish and installation work to every project, from a quick cabinet repaint to a full kitchen remodel.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and we have spent years working on homes across the Tampa Bay area. We understand the housing stock in master-planned communities like New Tampa, where the kitchens share a common era and respond well to the same proven updates. Our crews bring careful finish and installation work to every project, from a quick cabinet repaint to a full kitchen remodel.
 
 We are licensed and insured, our estimates are always free, and we are glad to walk you through the trade-offs between painting, refacing, and replacement so your budget goes toward changes you will actually notice. Whether your home backs up to Flatwoods Park or sits deep inside a gated village, you can see every community we cover on our [service areas](/service-areas) page.
 

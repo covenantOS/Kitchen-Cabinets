@@ -55,7 +55,7 @@ For homeowners ready to do more, [custom kitchen cabinets](/custom-kitchen-cabin
 
 ## Why Westchase Homeowners Choose Us
 
-Tampa Kitchen Cabinets is a division of Westchase Painting Company, so the neighborhood is quite literally in our name. That local history matters: we understand the housing stock here, the finishes that suit these homes, and the expectations of homeowners who take pride in their community. Our crews bring real finish and installation craftsmanship to every project, whether it is a quick cabinet repaint or a complete kitchen remodel.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and Westchase is quite literally in our name. That local history matters: we understand the housing stock here, the finishes that suit these homes, and the expectations of homeowners who take pride in their community. Our crews bring real finish and installation craftsmanship to every project, whether it is a quick cabinet repaint or a complete kitchen remodel.
 
 We are licensed and insured, our estimates are free, and we are happy to walk you through the trade-offs between painting, refacing, and replacement so you spend money where it actually changes the room. You can see every neighborhood we cover on our [service areas](/service-areas) page.
 

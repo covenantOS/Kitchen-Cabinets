@@ -13,10 +13,12 @@ const isNavy = background === 'navy';
       <div class="grid lg:grid-cols-5">
         <!-- Price panel -->
         <div class="lg:col-span-2 bg-[#1a2b4a] text-white p-8 sm:p-10 flex flex-col justify-center">
-          <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">The Tampa Kitchen Cabinets Offer</p>
+          <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Everything Included</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Everything you need. One clear price. Zero surprises.</h2>
+          <p class="text-gray-200 leading-relaxed mb-5">Every project includes premium materials, professional design, and expert installation, with no hidden fees and no surprise charges.</p>
           <p class="text-gray-300 text-lg">{offer.priceQualifier}</p>
-          <p class="text-6xl sm:text-7xl font-extrabold text-white leading-none my-1">{offer.price}</p>
-          <p class="text-2xl font-bold text-[#c9a227] mb-4">a complete new kitchen</p>
+          <p class="text-5xl sm:text-6xl font-extrabold text-white leading-none">{offer.price}</p>
+          <p class="text-xl font-bold text-[#c9a227] mb-4">a complete new kitchen, or from $250/month</p>
           <p class="text-gray-200 leading-relaxed">{offer.summary}</p>
           <div class="mt-6 flex flex-col sm:flex-row lg:flex-col gap-3">
             <a href="/contact" data-cta="promo_estimate" class="inline-flex items-center justify-center px-6 py-3.5 bg-[#c9a227] text-[#1a2b4a] font-bold rounded-lg hover:bg-[#d4b84a] transition-all">Get My Free Estimate</a>
@@ -48,7 +50,7 @@ const isNavy = background === 'navy';
                 <li class="flex items-start gap-2 text-gray-600 text-sm"><span class="text-[#c9a227] mt-0.5">+</span>{i}</li>
               ))}
             </ul>
-            <p class="text-xs text-gray-400 mt-5">No hidden surprises. The only exact number is the written estimate after we measure your kitchen.</p>
+            <p class="text-xs text-gray-500 mt-5">Most Tampa kitchens fit within the 17-cabinet package. For larger layouts, each additional cabinet is about $1,000, and you know the exact count before work begins, because we measure everything and show you the full design in 3D first.</p>
           </div>
         </div>
       </div>

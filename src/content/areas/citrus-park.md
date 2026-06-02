@@ -54,7 +54,7 @@ For homeowners who want a bigger change, [custom kitchen cabinets](/custom-kitch
 
 ## Why Citrus Park Homeowners Choose Us
 
-Tampa Kitchen Cabinets is a division of Westchase Painting Company, and we work on homes throughout the Tampa Bay area, including the established stucco neighborhoods that define Citrus Park. We know how these builder kitchens are put together and which updates give the best return, so we can point you toward the choice that makes the most sense rather than the most expensive one.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and we work on homes throughout the Tampa Bay area, including the established stucco neighborhoods that define Citrus Park. We know how these builder kitchens are put together and which updates give the best return, so we can point you toward the choice that makes the most sense rather than the most expensive one.
 
 We are licensed and insured, our estimates are always free, and we are happy to explain the differences between painting, refacing, and replacement so your money goes where it changes the room. Whether you live near Logan Gate or closer to Citrus Park Town Center, you can browse every community we serve on our [service areas](/service-areas) page.
 

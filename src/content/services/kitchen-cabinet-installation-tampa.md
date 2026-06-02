@@ -39,7 +39,7 @@ faqItems:
   - q: "Do you remove and dispose of my old cabinets?"
     a: "Yes. When your project calls for it, we remove the existing cabinets, haul them away, and prep the walls and floors for the new run. We coordinate the demolition with your plumbing and electrical so any rough-in changes happen at the right stage. If your existing boxes are still solid, we may suggest [refacing](/kitchen-cabinet-refacing-tampa) instead so you can save the cost of replacement."
   - q: "Do you install crown molding, toe kick, and hardware?"
-    a: "Yes. A complete install includes filler strips, toe kick, crown molding, and any light rail or trim your design calls for, plus soft-close hinges and the knobs or pulls you choose. We also align every door and drawer face so the reveals are even and everything closes smoothly. These finishing details are what make a new kitchen look truly built-in rather than just assembled."
+    a: "Yes. A complete install includes filler strips, toe kick, crown molding, and any light rail or trim your design calls for, plus soft-close hinges and the knobs or pulls you choose. We also align every door and drawer face so the reveals are even and everything closes smoothly. These finishing details are what make a new kitchen look truly built-in rather than merely assembled."
   - q: "How do you coordinate with countertops, plumbing, and electrical?"
     a: "Cabinet installation is the hinge point of a kitchen project, so timing matters. We set and level the cabinets first because countertops are templated to the installed boxes, then we coordinate with your countertop fabricator, plumber, and electrician so sinks, ranges, and outlets land where they should. If you are doing a larger renovation, our [kitchen remodeling service](/kitchen-remodeling-tampa) can manage the whole sequence for you."
   - q: "What affects the cost of cabinet installation in Tampa?"
@@ -68,7 +68,7 @@ related:
 draft: false
 ---
 
-The cabinets are the backbone of a kitchen, and how they are installed determines whether everything else, the countertops, the doors, the drawers, comes together cleanly or fights you for years. Professional **kitchen cabinet installation in Tampa** from Tampa Kitchen Cabinets means your cabinetry is set dead level, scribed tight to your walls, and secured to the studs so it stays that way. As a division of Westchase Painting Company, our crew brings 25-plus years of hands-on craftsmanship to stock, semi-custom, and custom cabinet installs across Tampa Bay.
+The cabinets are the backbone of a kitchen, and how they are installed determines whether everything else, the countertops, the doors, the drawers, comes together cleanly or fights you for years. Professional **kitchen cabinet installation in Tampa** from Tampa Kitchen Cabinets means your cabinetry is set dead level, scribed tight to your walls, and secured to the studs so it stays that way. Our crew brings 25-plus years of hands-on craftsmanship to stock, semi-custom, and custom cabinet installs across Tampa Bay.
 
 ## Why Professional Cabinet Installation in Tampa Matters
 
@@ -78,7 +78,7 @@ Quality **kitchen cabinet installation in Tampa** is what turns a stack of cabin
 
 ### Stock, Semi-Custom, and Custom
 
-We install all three tiers of cabinetry. Stock cabinets come in fixed sizes and finishes and are the budget-friendly choice. Semi-custom lines open up more sizes, styles, and finishes and suit the majority of Tampa kitchens. Custom cabinetry is built to your exact dimensions, which is the answer for unusual layouts or specific materials. If you are still selecting cabinets, our [custom kitchen cabinets](/custom-kitchen-cabinets-tampa) page walks through the options, and we are glad to install cabinetry you supply as well.
+We install all three tiers of cabinetry. Stock cabinets come in fixed sizes and finishes and are the most affordable choice. Semi-custom lines open up more sizes, styles, and finishes and suit the majority of Tampa kitchens. Custom cabinetry is built to your exact dimensions, which is the answer for unusual layouts or specific materials. If you are still selecting cabinets, our [custom kitchen cabinets](/custom-kitchen-cabinets-tampa) page walks through the options, and we are glad to install cabinetry you supply as well.
 
 ## Our Cabinet Installation Process
 

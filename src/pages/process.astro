@@ -9,18 +9,18 @@ import AnalyticsListeners from '../components/AnalyticsListeners.astro';
 import { site, telHref } from '../lib/site';
 
 const steps = [
-  { title: 'Free in-home estimate', time: '30-45 min', body: 'Will or Leandro walks your kitchen, measures, and talks through exactly what needs to happen to get the result you want. You leave with a written, line-item quote, not a verbal guess.', points: ['Same-week scheduling', 'Line-item quote, no surprise add-ons', 'No pressure, no deposit'] },
-  { title: 'Design, color & finish', time: 'About 1 week', body: 'We help you lock in door style, color, sheen, and hardware, with samples you can see in your own kitchen light. For refacing and custom work, we confirm materials and layout before anything is ordered.', points: ['Door style & material selection', 'On-cabinet color and finish samples', 'Hardware and storage options'] },
-  { title: 'Prep & protection', time: 'Day 1', body: 'Prep is where most cabinet jobs fail. We remove and label every door and drawer, clean and degrease, sand for adhesion, and protect your floors, counters, and appliances before any finish goes on. For installs, we remove the old cabinets cleanly.', points: ['Doors and drawers labeled and removed', 'TSP degrease, sand, and tack', 'Floors, counters, and appliances protected'] },
-  { title: 'Prime, build & base coats', time: 'Day 1-3', body: 'Every surface gets a proper bonding primer. Painted cabinets are sprayed in a controlled setup for a factory-smooth base. For custom and installation projects, boxes are fabricated, assembled, and prepped to set.', points: ['Cabinet-grade bonding primer', 'Sprayed, not brushed', 'Custom boxes built to spec'] },
-  { title: 'Finish coats & installation', time: 'Day 2-5', body: 'Painted cabinets receive multiple sprayed finish coats with light sanding between for a glass-smooth result. New and custom cabinetry is set, leveled, scribed to the walls, and secured, with crown molding and hardware installed.', points: ['Multiple sprayed finish coats', 'Level, scribed, and secured installs', 'Crown molding and soft-close hardware'] },
-  { title: 'Quality inspection', time: 'Final day', body: 'Before we tell you the job is done, John (our Director of Field Operations) does a full walk of the kitchen, flashlight in hand. If he spots a thin spot, a drip, or a door out of alignment, the crew fixes it before you ever see it.', points: ['Owner / foreman walk-through', 'Punch list addressed same day', 'Doors and drawers adjusted'] },
-  { title: 'Final walk-through & warranty', time: '30 min', body: 'We walk the finished kitchen with you, sign off on the work together, and hand you a written workmanship warranty you can hold in your hand. If anything comes up later, you call us directly.', points: ['Written, signed warranty', 'Care instructions for the finish', 'Direct line for any follow-up'] },
+  { title: 'Free consultation and measure', time: '30-45 min', body: 'We visit your home, measure your kitchen precisely, discuss your vision, and show you real material samples, cabinet doors, quartz slabs, and hardware, in your own lighting. You also receive a personal video introduction from your project lead before the visit, so you know exactly who is coming to your home.', points: ['Precise in-home measurement', 'Real samples in your own light', 'Video intro from your project lead'] },
+  { title: '3D design and selection', time: '24-48 hrs', body: 'Within 24 to 48 hours we create a photorealistic 3D rendering of your new kitchen using your exact measurements. See every cabinet, every countertop, every detail, and adjust anything you like until it is perfect.', points: ['Photorealistic 3D rendering', 'Built from your exact measurements', 'Adjust until it is perfect'] },
+  { title: 'Approval and scheduling', time: 'Same day', body: 'Once you love the design, you approve a fixed price. The price you see is the price you pay. We schedule your installation and order all materials. Your install date is locked in.', points: ['Fixed price you approve', 'The price you see is the price you pay', 'Install date locked in'] },
+  { title: 'Material preparation', time: 'Pre-install', body: 'Your cabinets, countertops, hardware, and trim are sourced, quality-checked, and staged. Everything arrives ready to install, with no waiting on back-orders or surprise delays.', points: ['Sourced and quality-checked', 'Staged and ready to install', 'No back-orders or surprise delays'] },
+  { title: 'Professional installation, days 1 to 3', time: 'Days 1-3', body: 'Our specialized installation team arrives on schedule. Existing cabinets are carefully removed, and your new cabinetry is precision-installed, leveled, and secured. Crown molding, hardware, and trim are completed.', points: ['Specialized installation team', 'Precision-installed, leveled, secured', 'Crown molding, hardware, and trim'] },
+  { title: 'Countertop template and fabrication, days 3 to 5', time: 'Days 3-5', body: 'With cabinets in place, we template your quartz countertops for a perfect fit, then fabricate and install. Backsplash and final connections are completed.', points: ['Quartz templated for a perfect fit', 'Fabricated and installed', 'Backsplash and final connections'] },
+  { title: 'Final walkthrough and warranty', time: '30 min', body: 'We walk through every detail together. You verify everything matches your approved 3D design. You receive your written warranty, care instructions, and direct contact information. Welcome to your new kitchen.', points: ['Verify the result matches your design', 'Written warranty and care instructions', 'Direct contact information'] },
 ];
 const stats = [
-  { value: 'Same week', label: 'Free estimate' },
-  { value: '1-7 days', label: 'Typical project' },
-  { value: 'Cabinet-grade', label: 'Sprayed finishes' },
+  { value: '5 days', label: 'Typical install' },
+  { value: '3D', label: 'Design before you buy' },
+  { value: 'Fixed', label: 'One clear price' },
   { value: 'In writing', label: 'Workmanship warranty' },
 ];
 ---
@@ -31,7 +31,7 @@ const stats = [
     <section class="relative pt-32 pb-16 bg-[#1a2b4a] text-center">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-3">Our Process</p>
-        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Seven steps. One flawless kitchen.</h1>
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">How your kitchen transformation works</h1>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">From the first phone call to the final warranty walk-through, here is exactly what happens when you hire {site.brandName}.</p>
       </div>
     </section>

@@ -11,7 +11,7 @@ import { site, telHref } from '../lib/site';
 const steps = [
   { n: '1', title: 'Check your rate', body: 'Fill out a short form. It takes about 60 seconds and will not affect your credit score.' },
   { n: '2', title: 'Compare offers', body: 'See personalized payment options from multiple lenders. Choose the rate and term that works best for you.' },
-  { n: '3', title: 'Build your kitchen', body: 'Once approved, we get started. You make simple monthly payments on a schedule that fits your budget.' },
+  { n: '3', title: 'Build your kitchen', body: 'Once approved, we get started. You make monthly payments on a schedule that fits your life.' },
 ];
 const benefits = [
   { title: 'Multiple lenders, one form', body: 'Acorn Finance matches you with competitive offers from several lenders at once.' },
@@ -35,6 +35,58 @@ const benefits = [
           <a href={site.acornFinanceUrl} target="_blank" rel="noopener" data-cta="financing_hero_acorn" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all">Check Your Rate Now</a>
           <p class="text-gray-400 text-sm mt-3">Powered by Acorn Finance. Checking your rate will not affect your credit score.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-[#1a2b4a] rounded-2xl border-2 border-[#c9a227] p-8 sm:p-12 text-center">
+          <h2 class="text-3xl font-bold text-white mb-3">Your kitchen, your terms</h2>
+          <p class="text-xl text-[#c9a227] font-semibold mb-6">Complete kitchen transformations from $250/month.</p>
+          <p class="text-gray-300 max-w-2xl mx-auto mb-6">We believe a beautiful kitchen should fit your life and your budget. That is why we offer flexible financing:</p>
+          <ul class="max-w-xl mx-auto text-left space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-gray-200"><svg class="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Quick approval, most homeowners are approved in minutes</li>
+            <li class="flex items-start gap-3 text-gray-200"><svg class="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Competitive rates, designed for homeowners</li>
+            <li class="flex items-start gap-3 text-gray-200"><svg class="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>No prepayment penalties, pay it off whenever you like</li>
+          </ul>
+          <p class="text-white font-semibold max-w-2xl mx-auto mb-8">Your monthly investment is less than a car payment, for something you use every single day.</p>
+          <a href={site.acornFinanceUrl} target="_blank" rel="noopener" data-cta="financing_callout_acorn" class="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#1a2b4a] font-bold text-lg rounded-lg hover:bg-[#d4b84a] transition-all">Check Your Rate, No Impact to Credit Score</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10"><h2 class="text-3xl font-bold text-[#1a2b4a]">What does $250/month look like?</h2></div>
+        <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="bg-[#1a2b4a] text-white">
+                <th class="px-5 py-4 font-semibold">Package</th>
+                <th class="px-5 py-4 font-semibold">Starting price</th>
+                <th class="px-5 py-4 font-semibold text-[#c9a227]">Estimated payment</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-5 py-4 text-gray-700">Standard kitchen (up to 17 cabinets plus quartz)</td>
+                <td class="px-5 py-4 font-semibold text-[#1a2b4a]">From $19,995</td>
+                <td class="px-5 py-4 font-bold text-[#c9a227]">about $250/mo</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-5 py-4 text-gray-700">Kitchen plus backsplash</td>
+                <td class="px-5 py-4 font-semibold text-[#1a2b4a]">From $21,495</td>
+                <td class="px-5 py-4 font-bold text-[#c9a227]">about $270/mo</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-5 py-4 text-gray-700">Kitchen plus backsplash plus flooring</td>
+                <td class="px-5 py-4 font-semibold text-[#1a2b4a]">From $25,245</td>
+                <td class="px-5 py-4 font-bold text-[#c9a227]">about $315/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-400 text-xs mt-4">Estimated payments based on an 84-month term with approved credit. Your actual rate and term may vary. Checking your rate has no impact to your credit score.</p>
       </div>
     </section>
 

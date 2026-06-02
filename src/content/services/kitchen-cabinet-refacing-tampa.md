@@ -4,7 +4,7 @@ shortName: "Cabinet Refacing"
 pageTitle: "Kitchen Cabinet Refacing Tampa | New Doors & Fronts"
 description: "Kitchen cabinet refacing in Tampa: new doors, drawer fronts, and matching veneer over your existing solid boxes. Licensed, insured, free estimates."
 breadcrumb: "Cabinet Refacing"
-heroSubtitle: "Keep your layout and your solid boxes, and get an all-new door style, color, and soft-close hardware in just a few days."
+heroSubtitle: "Keep your layout and your solid boxes, and get an all-new door style, color, and soft-close hardware in a few days."
 heroImage: "/services/refacing-hero.webp"
 order: 4
 cardDescription: "Swap dated doors and fronts for a brand-new style with matching veneer over your existing cabinet boxes."
@@ -41,7 +41,7 @@ faqItems:
   - q: "Does refacing include soft-close hinges and new hardware?"
     a: "Yes. New concealed soft-close hinges come standard with our refacing, and you choose the knobs or pulls that finish the look. Soft-close hardware is one of the upgrades homeowners notice most day to day, and it is included as part of the project rather than treated as an add-on."
   - q: "Is refacing worth it, and when should I not reface?"
-    a: "Refacing is worth it when your boxes are structurally solid, your layout works, and you want a new door style or material without the cost and disruption of replacement. It is not the right call if the boxes are water-damaged, sagging, or falling apart, or if you want to change the layout itself. In those cases a full replacement through our remodeling service makes more sense, and we will tell you honestly which path fits your kitchen."
+    a: "Refacing is worth it when your boxes are structurally solid, your layout works, and you want a new door style or material without the cost and disruption of replacement. It is not the right call if the boxes are water-damaged, sagging, or falling apart, or if you want to change the layout itself. In those cases a full replacement through our remodeling service makes more sense, and we will tell you which path fits your kitchen."
   - q: "Is refacing backed by a warranty?"
     a: "Yes. Our refacing work is backed by a written workmanship warranty, and we are fully licensed and insured. Free estimates are standard, and financing is available through Acorn Finance if you would like to spread the cost over time."
 gallery:
@@ -63,7 +63,7 @@ related:
 draft: false
 ---
 
-If your kitchen layout works and your cabinet boxes are solid, but the door style itself feels stuck in another decade, **kitchen cabinet refacing in Tampa** gives you an entirely new look without the cost, mess, or weeks of downtime of a full replacement. Tampa Kitchen Cabinets keeps your existing boxes in place, replaces the doors and drawer fronts with the style and material you choose, and skins the visible box faces with matching veneer so the finished kitchen looks brand new. As a division of Westchase Painting Company, our crew brings 25-plus years of finish and installation craftsmanship to every project.
+If your kitchen layout works and your cabinet boxes are solid, but the door style itself feels stuck in another decade, **kitchen cabinet refacing in Tampa** gives you an entirely new look without the cost, mess, or weeks of downtime of a full replacement. Tampa Kitchen Cabinets keeps your existing boxes in place, replaces the doors and drawer fronts with the style and material you choose, and skins the visible box faces with matching veneer so the finished kitchen looks brand new. Our crew brings 25-plus years of finish and installation craftsmanship to every project.
 
 ## What Cabinet Refacing in Tampa Actually Involves
 
@@ -73,7 +73,7 @@ The result is a kitchen that looks completely new from the outside while reusing
 
 ### Refacing Versus Painting Versus Replacing
 
-These three options solve different problems, and choosing the right one saves you money. [Cabinet painting](/kitchen-cabinet-painting-tampa) is the most affordable route when you like your current door style and simply want a fresh color. Refacing is the right move when the door style itself is dated, or when you want a material change such as real-wood or thermofoil doors that paint alone cannot deliver. Full replacement through a [kitchen remodel](/kitchen-remodeling-tampa) only makes sense when the boxes are failing or you want to change the layout entirely. We will always tell you honestly which option fits your kitchen and your budget.
+These three options solve different problems, and choosing the right one saves you money. [Cabinet painting](/kitchen-cabinet-painting-tampa) is the most affordable route when you like your current door style and want a fresh color. Refacing is the right move when the door style itself is dated, or when you want a material change such as real-wood or thermofoil doors that paint alone cannot deliver. Full replacement through a [kitchen remodel](/kitchen-remodeling-tampa) only makes sense when the boxes are failing or you want to change the layout entirely. We will always tell you which option fits your kitchen and your needs.
 
 ## Door Styles and Materials Built for Tampa Kitchens
 
@@ -99,4 +99,4 @@ We reface kitchens throughout the Tampa Bay area, from Westchase and Citrus Park
 
 ## Ready for a New Kitchen Without the Demolition?
 
-If your boxes are solid but your doors are dated, refacing is the fastest, cleanest way to fall back in love with your kitchen. [Contact us to request your free estimate](/contact) and let our experienced Tampa Bay team show you the door styles and finishes that will transform your space in just a few days.
+If your boxes are solid but your doors are dated, refacing is the fastest, cleanest way to fall back in love with your kitchen. [Contact us to request your free estimate](/contact) and let our experienced Tampa Bay team show you the door styles and finishes that will transform your space in a few days.

@@ -56,7 +56,7 @@ When an older layout no longer works, [custom kitchen cabinets](/custom-kitchen-
 
 ## Local Craftsmanship You Can Trust
 
-Tampa Kitchen Cabinets is a division of Westchase Painting Company, and we have spent years working on homes throughout the Tampa Bay area. We understand the housing stock in established neighborhoods like Carrollwood, where the goal is usually to respect a home's character while modernizing the parts that matter most. Our crews bring careful finish work and clean installation to every project, large or small.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and we have spent years working on homes throughout the Tampa Bay area. We understand the housing stock in established neighborhoods like Carrollwood, where the goal is usually to respect a home's character while modernizing the parts that matter most. Our crews bring careful finish work and clean installation to every project, large or small.
 
 We are licensed and insured, our estimates are always free, and we are glad to explain the differences between painting, refacing, and replacement so your budget goes toward changes you will actually notice. You can browse all the communities we serve on our [service areas](/service-areas) page.
 

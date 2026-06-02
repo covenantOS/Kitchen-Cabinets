@@ -55,7 +55,7 @@ When homeowners want to do more, our [kitchen remodeling](/kitchen-remodeling-ta
 
 ## Why Riverview Homeowners Choose Us
 
-Tampa Kitchen Cabinets is a division of Westchase Painting Company, and we work on homes across the Tampa Bay area, including the fast-growing communities that define Riverview. We understand how today's builder kitchens are constructed and how to upgrade them efficiently, so we can recommend the approach that gives your newer home the most character for your budget.
+Tampa Kitchen Cabinets brings 25-plus years of Tampa Bay home transformation experience, and we work on homes across the Tampa Bay area, including the fast-growing communities that define Riverview. We understand how today's builder kitchens are constructed and how to upgrade them efficiently, so we can recommend the approach that gives your newer home the most character for your budget.
 
 We are licensed and insured, our estimates are always free, and we are happy to talk through whether painting, a custom island, or a fuller upgrade makes the most sense for your kitchen. Whether you live near Winthrop Town Centre or in one of the newer communities along the Alafia River, you can browse every area we serve on our [service areas](/service-areas) page.
 

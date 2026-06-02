@@ -135,3 +135,20 @@ Content/positioning overhaul on the existing stack (no rebuild, no stack change)
 **Note on the homepage H1:** per your direction it now leads with the offer rather than the brand name. The exact "Tampa Kitchen Cabinets" string stays in the hero eyebrow, the `<title>`, the logo, the footer, and schema, so brand SEO is intact. Say the word if you'd rather the H1 itself carry the brand.
 
 **One more placeholder for this overhaul:** an **estimator name** for the pre-visit-video copy (currently generic "your estimator" / "Will or Leandro"). Provide the name to personalize it.
+
+---
+
+## 9. Changelog — Phase 2: premium positioning & messaging
+
+Messaging/positioning refinement on the same structure (no new page architecture).
+
+- **Price is no longer the headline.** Hero now leads with "Your kitchen, transformed." Price reveals after desire. `$20,000` became **`$19,995`** everywhere (the only `$20,000` left are the contact form's budget-range boundaries). `$19,995` appears exactly 3 times in the visible homepage (hero, the offer block, the comparison table); the rest is head metadata/schema only. Browser-tab titles and the contact-form intro no longer lead with price.
+- **PromoBlock reframed** to value-first ("Everything you need. One clear price. Zero surprises."), with the overage explanation ("each additional cabinet about $1,000") and a `$250/month` financing tie-in.
+- **Premium material positioning:** aspirational quartz-over-granite copy; cabinetry led by outcomes ("precision-fit", "curated collection"), with the 3-inch-increment detail moved into FAQ; 5-day install framed as a perfected process, not rushing.
+- **Westchase reframed as experience, not a parent.** Trust bar, hero, reviews, schema, and body copy now say "25+ years of Tampa Bay home transformation experience." Review attributions are "Tampa Bay homeowner." "A division of / sister company" removed from all user-facing copy (the legal entity remains in the footer copyright and legal pages).
+- **New sections/components:** `ThreeWays` (Big Box vs. Custom Shop vs. us + comparison table), `FAQSection` (7 Q&As + FAQPage schema), `SampleSelections` (8 real cabinet door/finish samples pulled in and optimized to WebP) on home + cabinets + gallery, a "No Surprises" guarantee band, and gallery captions.
+- **Process page** rewritten to a kitchen-remodel sequence (consultation → 3D design → approval → prep → install → countertop template → walkthrough). **Financing page** gained the "$250/month" callout and a monthly-payment examples table ($250 / $270 / $315). **Service-areas** and **about** reframed; **about** stat is now "home transformation expertise," not "finish craftsmanship."
+- **Lead form:** project types reordered (Painting last), budget ranges now start at $15,000–$20,000 (no sub-$15K), plus the homeowner qualifier. Footer CTA is "Get Your Free 3D Design Consultation," no price.
+- **Voice:** em dashes and the banned word/phrase list removed from all user-facing copy.
+
+**New Phase-2 placeholders:** the 8 cabinet **sample images** are stock/representative door renders (swap for your real finishes when ready); the **5-day / 3D-design / 2020 Design / pre-visit-video** claims should match your actual operations before launch; gallery captions cover style and color only (add real cost/timeline/neighborhood when you have it); financing monthly figures are illustrative (84-month term) and should be confirmed with Acorn.

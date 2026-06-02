@@ -1,0 +1,35 @@
+---
+import samples from '../data/samples.json';
+interface Props { background?: 'white' | 'gray'; heading?: string; subheading?: string; }
+const {
+  background = 'white',
+  heading = 'Explore our selections',
+  subheading = 'Choose from a curated collection of door styles, finishes, and hardware. We bring the samples to your home.',
+} = Astro.props as Props;
+const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+---
+<section class={`py-16 sm:py-20 ${bg}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">Selections</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">{heading}</h2>
+      <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">{subheading}</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {samples.items.map((item) => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <img
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
+            decoding="async"
+            width="400"
+            height="400"
+            class="w-full aspect-square object-cover rounded-xl"
+          />
+          <p class="px-3 py-3 text-sm font-semibold text-[#1a2b4a]">{item.caption}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

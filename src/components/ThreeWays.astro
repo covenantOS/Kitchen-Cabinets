@@ -1,0 +1,66 @@
+---
+interface Props { background?: 'white' | 'gray'; }
+const { background = 'white' } = Astro.props as Props;
+const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+
+const rows = [
+  { feature: 'Cabinets', box: 'Particle board, flat-pack', custom: 'Solid wood, handmade', tkc: 'Plywood construction, soft-close, factory-finished' },
+  { feature: 'Countertops', box: 'Sold separately', custom: 'Sold separately', tkc: 'Premium quartz included' },
+  { feature: 'Design', box: 'Pick from a screen', custom: 'Drawn by hand', tkc: 'Full 3D photorealistic rendering' },
+  { feature: 'Installation', box: 'DIY or hire separately', custom: '3 to 6 months', tkc: '5 days, professional team' },
+  { feature: 'Price range', box: '$8K to $15K plus installer and countertops', custom: '$45K to $60K+', tkc: 'From $19,995, everything included' },
+  { feature: 'Samples', box: 'Tiny chips at the store', custom: 'Visit a showroom', tkc: 'Brought to your home' },
+  { feature: 'Guarantee', box: 'Return policy', custom: 'Varies', tkc: 'Written warranty plus 3D-match guarantee' },
+];
+---
+<section class={`py-16 sm:py-20 ${bg}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="text-[#c9a227] font-semibold uppercase tracking-wider text-sm mb-2">Your options</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1a2b4a]">Three ways to get a new kitchen</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="text-lg font-bold text-[#1a2b4a] mb-3">The big box way</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Buy a box of parts from a warehouse. Hire your own installer, or spend your weekends with an Allen wrench. No design help. Particle board construction. Countertops sold separately.</p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="text-lg font-bold text-[#1a2b4a] mb-3">The custom cabinet shop way</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Beautiful, hand-built cabinetry, if you have $50,000 and four months to spare. Endless choices that lead to decision paralysis. Timelines that slip.</p>
+      </div>
+
+      <div class="relative bg-[#1a2b4a] rounded-xl p-6 shadow-lg border-2 border-[#c9a227]">
+        <span class="absolute -top-3 left-6 bg-[#c9a227] text-[#1a2b4a] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Recommended</span>
+        <h3 class="text-lg font-bold text-white mb-3 mt-1">The Tampa Kitchen Cabinets way</h3>
+        <p class="text-gray-200 text-sm leading-relaxed">Premium cabinetry from luxury-grade manufacturers. Quartz countertops included. See your kitchen in 3D before we build it. Professional installation in 5 days. One clear price. No surprises.</p>
+      </div>
+    </div>
+
+    <p class="text-center text-lg text-gray-600 mt-8 max-w-3xl mx-auto">We are not the cheapest option and we are not the most expensive. We are the smartest option: premium quality, a transparent process, and a timeline that respects your life.</p>
+
+    <div class="overflow-x-auto mt-12">
+      <table class="w-full min-w-[720px] border-collapse text-sm">
+        <thead>
+          <tr class="border-b border-gray-200">
+            <th class="text-left font-bold text-[#1a2b4a] p-4">Feature</th>
+            <th class="text-left font-bold text-[#1a2b4a] p-4">Big Box Store</th>
+            <th class="text-left font-bold text-[#1a2b4a] p-4">Custom Shop</th>
+            <th class="text-left font-bold text-[#1a2b4a] p-4 bg-[#c9a227]/15 rounded-t-xl">Tampa Kitchen Cabinets</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r, i) => (
+            <tr class="border-b border-gray-100">
+              <td class="p-4 font-semibold text-[#1a2b4a]">{r.feature}</td>
+              <td class="p-4 text-gray-600">{r.box}</td>
+              <td class="p-4 text-gray-600">{r.custom}</td>
+              <td class={`p-4 text-[#1a2b4a] font-medium bg-[#c9a227]/15${i === rows.length - 1 ? ' rounded-b-xl' : ''}`}>{r.tkc}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
